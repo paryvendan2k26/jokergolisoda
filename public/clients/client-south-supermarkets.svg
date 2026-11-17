@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+      <rect width="240" height="80" rx="8" fill="#F7F0E5" stroke="#E5D9C8" stroke-width="1.5"/>
+      <circle cx="36" cy="40" r="16" fill="#15803D" opacity="0.15"/>
+      <circle cx="36" cy="40" r="8" fill="#15803D"/>
+      <text x="64" y="45" font-family="Outfit, sans-serif" font-size="13" font-weight="700" fill="#1A1A1A">South Star Supermarkets</text>
+    </svg>
