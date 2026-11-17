@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check, MessageCircle, Phone } from 'lucide-react';
-import { companyDetails } from '../data/flavours';
+import { Check } from 'lucide-react';
 
 export default function Customers() {
   const [completedStep, setCompletedStep] = useState(1);
@@ -29,17 +28,17 @@ export default function Customers() {
     {
       num: 1,
       title: 'Retailers Contact Us',
-      desc: 'Send your crate requirements via Call or WhatsApp.',
+      desc: 'Send crate requirements.',
     },
     {
       num: 2,
       title: 'We Process Order',
-      desc: 'Fresh bottling, carbonation check, and hygienic crating.',
+      desc: 'Fresh bottling & crating.',
     },
     {
       num: 3,
       title: 'Delivered to You',
-      desc: 'Direct dispatch to your store wherever you are.',
+      desc: 'Direct doorstep delivery.',
     },
   ];
 
@@ -53,41 +52,35 @@ export default function Customers() {
   return (
     <section
       id="delivery"
-      className="py-16 sm:py-20 bg-white border-b border-stone-200/80 text-center"
+      className="py-20 sm:py-28 lg:py-32 bg-white border-b border-stone-200/80 text-center"
       aria-label="Direct Batch Delivery"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
-        <div className="max-w-2xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-joker-red block mb-2">
-            Seamless Wholesale Fulfillment
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-joker-charcoal tracking-tight uppercase">
-            Direct Batch Delivery
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Big Bold Section Heading (No unnecessary texts) */}
+        <div className="mb-16 sm:mb-24">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-joker-charcoal tracking-tight uppercase">
+            Batch Delivery
           </h2>
-          <p className="text-sm sm:text-base text-stone-600 mt-2 font-normal">
-            No complicated middlemen. Order authentic marble soda direct from our bottling unit.
-          </p>
         </div>
 
         {/* =============================================================== */}
-        {/* CONNECTING LINE WITH DOTS & TICK MARK ANIMATION                 */}
+        {/* BIGGER CONNECTING LINE WITH LARGER DOTS & TICK MARK ANIMATION   */}
         {/* =============================================================== */}
-        <div className="relative max-w-3xl mx-auto mb-14 sm:mb-16">
+        <div className="relative max-w-4xl mx-auto">
           {/* Background Gray Line */}
-          <div className="absolute top-6 left-8 right-8 h-1 bg-stone-200 rounded-full -translate-y-1/2 z-0" />
+          <div className="absolute top-8 sm:top-10 left-10 right-10 h-1.5 bg-stone-200 rounded-full -translate-y-1/2 z-0" />
 
           {/* Animated Green Connecting Line */}
           <div
-            className="absolute top-6 left-8 h-1 bg-emerald-500 rounded-full -translate-y-1/2 z-0 transition-all duration-700 ease-out"
+            className="absolute top-8 sm:top-10 left-10 h-1.5 bg-emerald-500 rounded-full -translate-y-1/2 z-0 transition-all duration-700 ease-out"
             style={{
-              width: `calc(${getLineWidth()} - (${getLineWidth()} === '100%' ? 0px : 16px))`,
-              maxWidth: 'calc(100% - 64px)',
+              width: `calc(${getLineWidth()} - (${getLineWidth()} === '100%' ? 0px : 20px))`,
+              maxWidth: 'calc(100% - 80px)',
             }}
           />
 
-          {/* 3 Step Dots & Captions */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-start">
+          {/* 3 Large Step Dots & Bold Captions */}
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 items-start">
             {steps.map((step) => {
               const isDone = completedStep >= step.num;
 
@@ -95,59 +88,36 @@ export default function Customers() {
                 <div
                   key={step.num}
                   onClick={() => setCompletedStep(step.num)}
-                  className="flex flex-col items-center text-center cursor-pointer group"
+                  className="flex flex-col items-center text-center cursor-pointer group select-none"
                 >
-                  {/* Dot with Animated Tick Mark */}
+                  {/* Large Dot with Animated Tick Mark */}
                   <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center font-black text-sm transition-all duration-500 shadow-sm ${
+                    className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center font-black transition-all duration-500 shadow-md ${
                       isDone
-                        ? 'bg-emerald-500 text-white ring-4 ring-emerald-100 scale-110 shadow-emerald-500/25'
-                        : 'bg-white text-stone-400 border-2 border-stone-300 group-hover:border-stone-400'
+                        ? 'bg-emerald-500 text-white ring-8 ring-emerald-100 scale-110 shadow-emerald-500/30'
+                        : 'bg-white text-stone-400 border-2 border-stone-300 group-hover:border-stone-400 text-lg sm:text-xl'
                     }`}
                   >
                     {isDone ? (
-                      <Check className="w-6 h-6 stroke-[3] animate-in zoom-in-50 duration-300" />
+                      <Check className="w-8 h-8 sm:w-10 sm:h-10 stroke-[3.5] animate-in zoom-in-50 duration-300" />
                     ) : (
                       <span>0{step.num}</span>
                     )}
                   </div>
 
-                  {/* Step Title in Bold Letters */}
-                  <h3 className="mt-4 text-base sm:text-lg font-black text-joker-charcoal uppercase tracking-tight">
+                  {/* Step Title in Bigger Bold Letters */}
+                  <h3 className="mt-6 text-xl sm:text-2xl lg:text-3xl font-black text-joker-charcoal uppercase tracking-tight">
                     {step.title}
                   </h3>
 
                   {/* Simple Text */}
-                  <p className="mt-1 text-xs sm:text-sm text-stone-600 max-w-xs font-normal">
+                  <p className="mt-2 text-sm sm:text-base text-stone-500 font-semibold max-w-xs">
                     {step.desc}
                   </p>
                 </div>
               );
             })}
           </div>
-        </div>
-
-        {/* Quick Action Order Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <a
-            href={`https://wa.me/${companyDetails.whatsappNumber}?text=${encodeURIComponent(
-              'Hello Joker Golisoda, I would like to order fresh crates for my retail shop.'
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-md transition-all hover:scale-105"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>Order on WhatsApp</span>
-          </a>
-
-          <a
-            href={`tel:${companyDetails.phone}`}
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-stone-100 text-stone-800 text-xs sm:text-sm font-extrabold uppercase tracking-wider border border-stone-300 transition-all hover:border-joker-red hover:text-joker-red shadow-sm"
-          >
-            <Phone className="w-4 h-4 text-joker-red" />
-            <span>Call: {companyDetails.phoneFormatted}</span>
-          </a>
         </div>
       </div>
     </section>
