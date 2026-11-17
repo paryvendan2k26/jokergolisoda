@@ -50,8 +50,8 @@ export default function TopSellers() {
           <span className="text-[11px] font-bold uppercase tracking-widest text-joker-red block mb-1">
             Wholesale Favorites
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-joker-charcoal tracking-tight">
-            Top 3 Sellers
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-joker-charcoal tracking-tight uppercase">
+            Top 3 Joker Golisoda Sellers
           </h2>
         </div>
 

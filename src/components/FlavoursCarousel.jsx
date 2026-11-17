@@ -66,11 +66,11 @@ export default function FlavoursCarousel() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-joker-charcoal tracking-tight">
-              Our Flavours
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-joker-charcoal tracking-tight uppercase">
+              Joker Golisoda Flavours
             </h2>
             <p className="text-stone-500 text-sm sm:text-base mt-1">
-              Authentic Indian sodas with the classic marble pop.
+              12 authentic Indian marble soda flavours crafted by Joker Golisoda.
             </p>
           </div>
 

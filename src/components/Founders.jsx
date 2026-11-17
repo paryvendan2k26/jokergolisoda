@@ -28,7 +28,7 @@ export default function Founders() {
         {/* Simple Bold Heading */}
         <div className="mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-joker-charcoal tracking-tight uppercase">
-            Founders
+            Joker Golisoda Founders
           </h2>
         </div>
 

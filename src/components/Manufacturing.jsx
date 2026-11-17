@@ -5,12 +5,12 @@ export default function Manufacturing() {
   const trackRef = useRef(null);
 
   const images = [
-    { src: '/manufacturing/codd-neck-counter-pressure-filling.jpg', title: 'Automated Bottling Line' },
-    { src: '/manufacturing/automated-bottle-washing.jpg', title: 'Rotary Bottle Washer' },
-    { src: '/manufacturing/carbonation-pressure-testing.jpg', title: 'Carbonation Lab' },
-    { src: '/manufacturing/hygienic-shrink-packaging.jpg', title: 'Packaging Unit' },
-    { src: '/manufacturing/wholesale-pallet-dispatch.jpg', title: 'Dispatch Warehouse' },
-    { src: '/manufacturing/ro-water-treatment.jpg', title: 'RO Water Treatment' },
+    { src: '/manufacturing/codd-neck-counter-pressure-filling.jpg', title: 'Joker Golisoda Automated Bottling Line' },
+    { src: '/manufacturing/automated-bottle-washing.jpg', title: 'Joker Golisoda Rotary Bottle Washer' },
+    { src: '/manufacturing/carbonation-pressure-testing.jpg', title: 'Joker Golisoda Carbonation Lab' },
+    { src: '/manufacturing/hygienic-shrink-packaging.jpg', title: 'Joker Golisoda Packaging Unit' },
+    { src: '/manufacturing/wholesale-pallet-dispatch.jpg', title: 'Joker Golisoda Dispatch Warehouse' },
+    { src: '/manufacturing/ro-water-treatment.jpg', title: 'Joker Golisoda 7-Stage RO Water Plant' },
   ];
 
   const loopImages = [...images, ...images];
@@ -40,31 +40,37 @@ export default function Manufacturing() {
   return (
     <section
       id="manufacturing"
-      className="py-20 sm:py-24 bg-white border-b border-stone-200/80 overflow-hidden"
-      aria-label="Bottling Unit"
+      className="py-20 sm:py-28 bg-joker-charcoal text-white border-b border-stone-800 overflow-hidden"
+      aria-label="Joker Golisoda Bottling Unit"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-joker-charcoal tracking-tight">
-          Bottling Unit
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14 text-center">
+        <span className="text-xs font-bold uppercase tracking-widest text-joker-red block mb-2">
+          Modern Factory Infrastructure
+        </span>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase">
+          Joker Golisoda Bottling Unit
         </h2>
+        <p className="text-stone-400 text-sm sm:text-base mt-2 max-w-2xl mx-auto font-normal">
+          Automated counter-pressure bottling, 7-stage RO purification, and statutory quality testing by Dhanvin Foods.
+        </p>
       </div>
 
-      {/* Clean moving reel of factory photos - enlarged cards */}
+      {/* Clean moving reel of factory photos with dark backdrop */}
       <div className="w-full overflow-hidden py-3">
         <div ref={trackRef} className="flex gap-6 sm:gap-8 w-max pl-4">
           {loopImages.map((item, idx) => (
             <div
               key={idx}
-              className="relative flex-shrink-0 w-[340px] sm:w-[460px] md:w-[520px] lg:w-[580px] h-[230px] sm:h-[310px] md:h-[350px] lg:h-[390px] rounded-3xl overflow-hidden shadow-md border border-stone-200 group"
+              className="relative flex-shrink-0 w-[340px] sm:w-[460px] md:w-[520px] lg:w-[580px] h-[230px] sm:h-[310px] md:h-[350px] lg:h-[390px] rounded-3xl overflow-hidden shadow-2xl border border-stone-800 bg-stone-900 group"
             >
               <img
                 src={item.src}
                 alt={item.title}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
               />
-              <div className="absolute inset-x-0 bottom-0 py-3 px-4 bg-white/95 backdrop-blur-md border-t border-stone-200/80 text-center">
-                <span className="text-sm sm:text-base font-bold text-joker-charcoal">
+              <div className="absolute inset-x-0 bottom-0 py-3.5 px-4 bg-joker-charcoal/90 backdrop-blur-md border-t border-stone-800 text-center">
+                <span className="text-sm sm:text-base font-bold text-white tracking-wide">
                   {item.title}
                 </span>
               </div>

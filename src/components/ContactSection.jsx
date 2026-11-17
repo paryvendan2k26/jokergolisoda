@@ -73,11 +73,11 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-12">
           {/* Left: Quick Direct Ordering */}
           <div className="lg:col-span-5">
-            <h2 className="text-3xl sm:text-4xl font-black text-joker-charcoal tracking-tight mb-2">
-              Order or Inquire
+            <h2 className="text-3xl sm:text-4xl font-black text-joker-charcoal tracking-tight mb-2 uppercase">
+              Order Joker Golisoda
             </h2>
             <p className="text-stone-600 text-sm leading-relaxed mb-6">
-              Call us directly or send a message on WhatsApp for immediate pricing and delivery.
+              Contact our bottling plant directly for fresh Joker Golisoda crate orders, territory distributorship, and wholesale pricing.
             </p>
 
             <div className="space-y-3.5 mb-6">

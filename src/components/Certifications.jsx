@@ -16,8 +16,8 @@ export default function Certifications() {
         <span className="text-xs font-bold uppercase tracking-widest text-joker-red block mb-1">
           Statutory Approvals
         </span>
-        <h2 className="text-3xl sm:text-4xl font-black text-joker-charcoal mb-8 tracking-tight">
-          Licenses
+        <h2 className="text-3xl sm:text-4xl font-black text-joker-charcoal mb-8 tracking-tight uppercase">
+          Joker Golisoda Licenses
         </h2>
 
         {/* 2 Official License Cards */}

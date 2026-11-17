@@ -11,14 +11,18 @@ export default function Footer() {
           className="h-9 w-auto object-contain mb-4"
         />
 
-        <p className="text-stone-400 text-xs sm:text-sm max-w-md mb-6">
-          Traditional Indian Marble Soda manufactured by <strong>{companyDetails.parentCompany}</strong>.
+        <p className="text-stone-400 text-xs sm:text-sm max-w-lg mb-6">
+          <strong>Joker Golisoda</strong> is an authentic Indian Codd-neck marble soda brand manufactured by <strong>{companyDetails.parentCompany}</strong>. Pure cane sugar, returnable glass bottles, and statutory FSSAI compliance.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-stone-400 mb-8">
+          <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#flavours" className="hover:text-white transition-colors">Flavours</a>
+          <a href="#top-sellers" className="hover:text-white transition-colors">Top Sellers</a>
+          <a href="#delivery" className="hover:text-white transition-colors">Batch Delivery</a>
           <a href="#manufacturing" className="hover:text-white transition-colors">Bottling Unit</a>
           <a href="#licenses" className="hover:text-white transition-colors">Licenses</a>
+          <a href="#founders" className="hover:text-white transition-colors">Founders</a>
           <a href="#contact" className="hover:text-white transition-colors">Contact</a>
           <a href={`tel:${companyDetails.phone}`} className="hover:text-white transition-colors">{companyDetails.phoneFormatted}</a>
         </div>

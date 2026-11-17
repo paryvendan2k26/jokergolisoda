@@ -59,7 +59,7 @@ export default function Customers() {
         {/* Big Bold Section Heading (No unnecessary texts) */}
         <div className="mb-16 sm:mb-24">
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-joker-charcoal tracking-tight uppercase">
-            Batch Delivery
+            Joker Golisoda Batch Delivery
           </h2>
         </div>
 
