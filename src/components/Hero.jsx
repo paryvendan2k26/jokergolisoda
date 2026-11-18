@@ -60,7 +60,7 @@ export default function Hero() {
         });
       });
 
-      // Mobile (< 768px): Centered tilt transition
+      // Mobile (< 768px): Centered tilt transition & moves bottle down in About Us
       mm.add('(max-width: 767px)', () => {
         gsap.set(bottleRef.current, {
           rotate: -8,
@@ -80,7 +80,8 @@ export default function Hero() {
             invalidateOnRefresh: true,
           },
           rotate: 6,
-          scale: 0.88,
+          y: () => window.innerHeight * 0.25,
+          scale: 0.9,
           ease: 'power1.inOut',
         });
       });
@@ -104,7 +105,7 @@ export default function Hero() {
               ref={bottleRef}
               src="/assets/hero-orange-bottle.png"
               alt="Joker Golisoda Orange Bottle"
-              className="relative z-40 h-[440px] sm:h-[520px] lg:h-[580px] w-auto object-contain select-none will-change-transform pointer-events-none"
+              className="relative z-40 h-[260px] sm:h-[380px] md:h-[480px] lg:h-[580px] w-auto object-contain select-none will-change-transform pointer-events-none"
             />
           </div>
         </div>
@@ -154,7 +155,7 @@ export default function Hero() {
           </div>
 
           {/* Center Column: Stage reserved for the sticky Orange Bottle */}
-          <div className="lg:col-span-4 flex items-center justify-center relative min-h-[380px] sm:min-h-[480px] lg:min-h-[600px] pointer-events-none">
+          <div className="lg:col-span-4 flex items-center justify-center relative min-h-[260px] sm:min-h-[380px] lg:min-h-[600px] pointer-events-none">
             {/* Bottle floats here from the sticky layer */}
           </div>
 
@@ -256,7 +257,7 @@ export default function Hero() {
             </div>
 
             {/* Right Column: Destination Target for the Bottle */}
-            <div className="lg:col-span-5 flex items-center justify-center relative min-h-[400px] sm:min-h-[500px] pointer-events-none">
+            <div className="lg:col-span-5 flex items-center justify-center relative min-h-[280px] sm:min-h-[380px] lg:min-h-[500px] pointer-events-none mt-8 lg:mt-0">
               <div ref={aboutTargetRef} className="w-2 h-2 pointer-events-none" />
             </div>
           </div>

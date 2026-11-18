@@ -293,6 +293,8 @@ export const companyDetails = {
   phoneFormatted: "+91 98400 12345",
   whatsappNumber: "919840012345",
   email: "orders@jokergolisoda.com",
+  fssaiNumber: "12426008000862",
+  gstin: "33AAHCD4210M1Z8",
   factoryAddress: "Plot No. 42 & 43, Food Processing Industrial Estate, Chennai Bypass Road, Tamil Nadu, 600058, India",
   googleMapsLink: "https://maps.google.com/?q=Food+Processing+Industrial+Estate+Chennai"
 };
