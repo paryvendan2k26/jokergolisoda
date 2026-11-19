@@ -60,8 +60,30 @@ export default function Hero() {
         });
       });
 
-      // Mobile (< 768px): Animation is disabled per user request.
-      // Clean in-flow static bottles are rendered in each section's flow on mobile.
+      // Mobile (< 768px): Centered tilt transition
+      mm.add('(max-width: 767px)', () => {
+        gsap.set(bottleRef.current, {
+          rotate: -8,
+          scale: 1,
+          x: 0,
+          y: 0,
+          transformOrigin: '50% 50%',
+        });
+
+        gsap.to(bottleRef.current, {
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            endTrigger: aboutRef.current,
+            end: 'center center',
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+          rotate: 6,
+          scale: 0.88,
+          ease: 'power1.inOut',
+        });
+      });
 
       // Refresh ScrollTrigger once DOM layout stabilizes
       ScrollTrigger.refresh();
@@ -73,16 +95,16 @@ export default function Hero() {
   return (
     <div ref={containerRef} className="relative w-full overflow-visible">
       {/* ========================================================================= */}
-      {/* STICKY ORANGE BOTTLE LAYER (Laptop & Large Screens only: md: / lg:)       */}
+      {/* STICKY ORANGE BOTTLE LAYER (z-40, Always in front, Natural clean sizing)   */}
       {/* ========================================================================= */}
-      <div className="hidden md:block absolute inset-0 pointer-events-none z-40 overflow-visible">
+      <div className="absolute inset-0 pointer-events-none z-40 overflow-visible">
         <div className="sticky top-0 h-screen w-full flex items-center justify-center pointer-events-none">
           <div className="relative flex items-center justify-center pointer-events-none">
             <img
               ref={bottleRef}
               src="/assets/hero-orange-bottle.png"
               alt="Joker Golisoda Orange Bottle"
-              className="relative z-40 md:h-[480px] lg:h-[580px] w-auto object-contain select-none will-change-transform pointer-events-none"
+              className="relative z-40 h-[440px] sm:h-[520px] lg:h-[580px] w-auto object-contain select-none will-change-transform pointer-events-none"
             />
           </div>
         </div>
@@ -118,9 +140,9 @@ export default function Hero() {
           <div className="lg:col-span-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
             <div className="mb-4 sm:mb-6">
               <img
-                src="/assets/logo-white.png"
+                src="/assets/joker-official-logo.png"
                 alt="Joker Golisoda"
-                className="h-14 sm:h-20 w-auto object-contain drop-shadow-md"
+                className="h-20 sm:h-28 w-auto object-contain drop-shadow-md"
               />
             </div>
 
@@ -131,24 +153,17 @@ export default function Hero() {
             </h1>
           </div>
 
-          {/* Center Column: Stage reserved for the sticky Orange Bottle on desktop; Static bottle on mobile */}
-          <div className="lg:col-span-4 flex items-center justify-center relative min-h-0 md:min-h-[380px] lg:min-h-[600px]">
-            {/* Mobile-only static bottle */}
-            <div className="block md:hidden my-6">
-              <img
-                src="/assets/hero-orange-bottle.png"
-                alt="Joker Golisoda Orange Bottle"
-                className="h-[250px] sm:h-[300px] w-auto object-contain mx-auto -rotate-6 drop-shadow-2xl select-none"
-              />
-            </div>
+          {/* Center Column: Stage reserved for the sticky Orange Bottle */}
+          <div className="lg:col-span-4 flex items-center justify-center relative min-h-[380px] sm:min-h-[480px] lg:min-h-[600px] pointer-events-none">
+            {/* Bottle floats here from the sticky layer */}
           </div>
 
           {/* Right Column: Big Punchy Text & Action Button */}
           <div className="lg:col-span-4 text-center lg:text-right flex flex-col items-center lg:items-end z-10">
             <div className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.02] uppercase mb-8">
-              Natural <br />
-              Cane Sugar. <br />
-              <span className="text-amber-400">Pure Fizz.</span>
+              Unleash The <br />
+              Taste. <br />
+              <span className="text-amber-400">Experience The Twist!</span>
             </div>
 
             <div>
@@ -191,34 +206,13 @@ export default function Hero() {
               </span>
 
               <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-joker-charcoal tracking-tight leading-[1.08] mb-6">
-                The Real Marble Soda Heritage.
+                Unleash the Taste. <br />
+                <span className="text-joker-red">Experience the Twist!</span>
               </h2>
 
-              <p className="text-base sm:text-lg text-stone-700 leading-relaxed font-normal mb-5 max-w-xl">
-                Joker Golisoda by <strong>Dhanvin Foods</strong> revives the pure nostalgia of authentic Indian Codd-neck marble soda. Crafted with 100% natural cane sugar, 7-stage RO purified water, and genuine fruit extracts.
+              <p className="text-base sm:text-lg text-stone-700 leading-relaxed font-normal mb-8 max-w-xl">
+                Welcome to <strong>Joker Golisoda</strong>, where traditional refreshment meets exciting flavours and a bold, playful identity!
               </p>
-
-              <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal mb-8 max-w-xl">
-                Every bottle delivers that unmistakable thunderous marble pop and crisp, high-effervescence carbonation in heavy-gauge returnable glass bottles.
-              </p>
-
-              {/* 3 Simple Pillars */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-xl">
-                <div className="p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
-                  <span className="text-xs font-bold text-stone-900 block mb-0.5">100% Cane Sugar</span>
-                  <span className="text-[11px] text-stone-500">Zero artificial sweeteners</span>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
-                  <span className="text-xs font-bold text-stone-900 block mb-0.5">Codd Glass Bottle</span>
-                  <span className="text-[11px] text-stone-500">Recyclable marble seal</span>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
-                  <span className="text-xs font-bold text-stone-900 block mb-0.5">High Effervescence</span>
-                  <span className="text-[11px] text-stone-500">Maximum fizzy bite</span>
-                </div>
-              </div>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4">
@@ -240,24 +234,9 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right Column: Destination Target for sticky bottle on desktop; In-flow showcase bottle on mobile */}
-            <div className="lg:col-span-5 flex items-center justify-center relative min-h-0 md:min-h-[380px] lg:min-h-[500px] mt-6 lg:mt-0">
-              <div ref={aboutTargetRef} className="w-2 h-2 pointer-events-none hidden md:block" />
-
-              {/* Mobile-only static showcase bottle */}
-              <div className="block md:hidden text-center py-4">
-                <div className="relative mx-auto flex items-center justify-center">
-                  <div className="absolute inset-0 bg-joker-red/10 rounded-full blur-2xl transform scale-75" />
-                  <img
-                    src="/assets/hero-orange-bottle.png"
-                    alt="Joker Golisoda Marble Bottle Heritage"
-                    className="relative z-10 h-[240px] sm:h-[280px] w-auto object-contain mx-auto rotate-6 drop-shadow-xl select-none"
-                  />
-                </div>
-                <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-stone-500 mt-4 px-3.5 py-1 bg-white rounded-full border border-stone-200/80 shadow-sm">
-                  Signature Returnable Codd-Neck Glass
-                </span>
-              </div>
+            {/* Right Column: Destination Target for the Bottle */}
+            <div className="lg:col-span-5 flex items-center justify-center relative min-h-[400px] sm:min-h-[500px] pointer-events-none">
+              <div ref={aboutTargetRef} className="w-2 h-2 pointer-events-none" />
             </div>
           </div>
         </div>

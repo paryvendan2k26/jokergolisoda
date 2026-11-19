@@ -77,19 +77,14 @@ export default function TopSellers() {
                   {renderBadge(item.rankNumber)}
 
                   <span className="text-[10px] font-bold text-white/90 bg-black/20 backdrop-blur-sm px-2 py-0.5 rounded-full uppercase tracking-wider">
-                    200ml Glass
+                    300ml • ₹30/35
                   </span>
                 </div>
 
                 {/* Bold Letters Flavour Name */}
-                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight uppercase leading-none drop-shadow-sm mb-1.5">
+                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight uppercase leading-none drop-shadow-sm mb-3">
                   {item.name}
                 </h3>
-
-                {/* Subtitle */}
-                <p className="text-white/90 text-xs sm:text-sm font-medium max-w-md mb-3 line-clamp-1">
-                  {item.subName} • {item.tagline}
-                </p>
 
                 {/* Compact Action Link */}
                 <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/20 group-hover:bg-white text-white group-hover:text-stone-900 font-bold text-[11px] uppercase tracking-wider transition-all shadow-sm">

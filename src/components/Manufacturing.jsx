@@ -5,12 +5,12 @@ export default function Manufacturing() {
   const trackRef = useRef(null);
 
   const images = [
-    { src: '/manufacturing/codd-neck-counter-pressure-filling.jpg', title: 'Joker Golisoda Automated Bottling Line' },
-    { src: '/manufacturing/automated-bottle-washing.jpg', title: 'Joker Golisoda Rotary Bottle Washer' },
-    { src: '/manufacturing/carbonation-pressure-testing.jpg', title: 'Joker Golisoda Carbonation Lab' },
-    { src: '/manufacturing/hygienic-shrink-packaging.jpg', title: 'Joker Golisoda Packaging Unit' },
-    { src: '/manufacturing/wholesale-pallet-dispatch.jpg', title: 'Joker Golisoda Dispatch Warehouse' },
-    { src: '/manufacturing/ro-water-treatment.jpg', title: 'Joker Golisoda 7-Stage RO Water Plant' },
+    { src: '/manufacturing/codd-neck-counter-pressure-filling.jpg', title: 'Bottling Line' },
+    { src: '/manufacturing/automated-bottle-washing.jpg', title: 'Rotary Bottle Washer' },
+    { src: '/manufacturing/carbonation-pressure-testing.jpg', title: 'Carbonation Lab' },
+    { src: '/manufacturing/hygienic-shrink-packaging.jpg', title: 'Packaging Unit' },
+    { src: '/manufacturing/wholesale-pallet-dispatch.jpg', title: 'Dispatch Warehouse' },
+    { src: '/manufacturing/ro-water-treatment.jpg', title: 'Water Purification Unit' },
   ];
 
   const loopImages = [...images, ...images];
@@ -50,9 +50,6 @@ export default function Manufacturing() {
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase">
           Joker Golisoda Bottling Unit
         </h2>
-        <p className="text-stone-400 text-sm sm:text-base mt-2 max-w-2xl mx-auto font-normal">
-          Automated counter-pressure bottling, 7-stage RO purification, and statutory quality testing by Dhanvin Foods.
-        </p>
       </div>
 
       {/* Clean moving reel of factory photos with dark backdrop */}
