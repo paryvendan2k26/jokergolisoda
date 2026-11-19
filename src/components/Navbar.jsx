@@ -33,8 +33,9 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center" aria-label="Joker Golisoda Home">
           <img
-            src="/assets/logo-navy.png"
+            src="/assets/logo-navy.webp"
             alt="Joker Golisoda"
+            decoding="async"
             className="h-8 sm:h-9 w-auto object-contain"
           />
         </a>

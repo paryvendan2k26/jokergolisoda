@@ -5,12 +5,12 @@ export default function Manufacturing() {
   const trackRef = useRef(null);
 
   const images = [
-    { src: '/manufacturing/codd-neck-counter-pressure-filling.jpg', title: 'Joker Golisoda Automated Bottling Line' },
-    { src: '/manufacturing/automated-bottle-washing.jpg', title: 'Joker Golisoda Rotary Bottle Washer' },
-    { src: '/manufacturing/carbonation-pressure-testing.jpg', title: 'Joker Golisoda Carbonation Lab' },
-    { src: '/manufacturing/hygienic-shrink-packaging.jpg', title: 'Joker Golisoda Packaging Unit' },
-    { src: '/manufacturing/wholesale-pallet-dispatch.jpg', title: 'Joker Golisoda Dispatch Warehouse' },
-    { src: '/manufacturing/ro-water-treatment.jpg', title: 'Joker Golisoda 7-Stage RO Water Plant' },
+    { src: '/manufacturing/codd-neck-counter-pressure-filling.webp', title: 'Joker Golisoda Automated Bottling Line' },
+    { src: '/manufacturing/automated-bottle-washing.webp', title: 'Joker Golisoda Rotary Bottle Washer' },
+    { src: '/manufacturing/carbonation-pressure-testing.webp', title: 'Joker Golisoda Carbonation Lab' },
+    { src: '/manufacturing/hygienic-shrink-packaging.webp', title: 'Joker Golisoda Packaging Unit' },
+    { src: '/manufacturing/wholesale-pallet-dispatch.webp', title: 'Joker Golisoda Dispatch Warehouse' },
+    { src: '/manufacturing/ro-water-treatment.webp', title: 'Joker Golisoda 7-Stage RO Water Plant' },
   ];
 
   const loopImages = [...images, ...images];
@@ -67,6 +67,7 @@ export default function Manufacturing() {
                 src={item.src}
                 alt={item.title}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
               />
               <div className="absolute inset-x-0 bottom-0 py-3.5 px-4 bg-joker-charcoal/90 backdrop-blur-md border-t border-stone-800 text-center">

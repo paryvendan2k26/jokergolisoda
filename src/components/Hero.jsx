@@ -80,8 +80,9 @@ export default function Hero() {
           <div className="relative flex items-center justify-center pointer-events-none">
             <img
               ref={bottleRef}
-              src="/assets/hero-orange-bottle.png"
+              src="/assets/hero-orange-bottle.webp"
               alt="Joker Golisoda Orange Bottle"
+              decoding="async"
               className="relative z-40 md:h-[480px] lg:h-[580px] w-auto object-contain select-none will-change-transform pointer-events-none"
             />
           </div>
@@ -136,8 +137,9 @@ export default function Hero() {
             {/* Mobile-only static bottle */}
             <div className="block md:hidden my-6">
               <img
-                src="/assets/hero-orange-bottle.png"
+                src="/assets/hero-orange-bottle.webp"
                 alt="Joker Golisoda Orange Bottle"
+                decoding="async"
                 className="h-[250px] sm:h-[300px] w-auto object-contain mx-auto -rotate-6 drop-shadow-2xl select-none"
               />
             </div>
@@ -249,8 +251,10 @@ export default function Hero() {
                 <div className="relative mx-auto flex items-center justify-center">
                   <div className="absolute inset-0 bg-joker-red/10 rounded-full blur-2xl transform scale-75" />
                   <img
-                    src="/assets/hero-orange-bottle.png"
+                    src="/assets/hero-orange-bottle.webp"
                     alt="Joker Golisoda Marble Bottle Heritage"
+                    loading="lazy"
+                    decoding="async"
                     className="relative z-10 h-[240px] sm:h-[280px] w-auto object-contain mx-auto rotate-6 drop-shadow-xl select-none"
                   />
                 </div>
