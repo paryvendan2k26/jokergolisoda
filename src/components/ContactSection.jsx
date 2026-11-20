@@ -72,14 +72,14 @@ export default function ContactSection() {
           },
           body: JSON.stringify({
             access_key: web3Key,
-            subject: `New Wholesale Enquiry from ${formData.name} (${formData.city}, ${formData.state})`,
-            from_name: 'Joker Golisoda Website',
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email,
-            city: formData.city,
-            state: formData.state,
-            message: formData.message,
+            subject: `Wholesale Enquiry: ${formData.name} (${formData.city}, ${formData.state})`,
+            from_name: 'Joker Golisoda Portal',
+            Name: formData.name,
+            Message: formData.message,
+            Phone: formData.phone,
+            Email: formData.email,
+            City: formData.city,
+            State: formData.state,
             botcheck: formData.botcheck,
             reply_to: formData.email || companyDetails.email
           })
@@ -99,11 +99,11 @@ export default function ContactSection() {
           templateId,
           {
             from_name: formData.name,
+            message: formData.message,
             phone_number: formData.phone,
             email_address: formData.email,
             city: formData.city,
             state: formData.state,
-            message: formData.message,
             botcheck: formData.botcheck,
             reply_to: formData.email || companyDetails.email
           },
@@ -290,7 +290,7 @@ export default function ContactSection() {
                     </div>
                     <a
                       href={`https://wa.me/${companyDetails.whatsappNumber}?text=${encodeURIComponent(
-                        `Hi Joker Golisoda, my enquiry is:\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nCity: ${formData.city}, ${formData.state}\nMessage: ${formData.message}`
+                        `Hi Joker Golisoda, my enquiry is:\nName: ${formData.name}\nMessage: ${formData.message}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nCity: ${formData.city}, ${formData.state}`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
