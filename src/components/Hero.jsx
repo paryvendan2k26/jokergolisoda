@@ -115,8 +115,8 @@ export default function Hero() {
 
         {/* Hero 3-Column Grid */}
         <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-4">
-          {/* Left Column: Brand Logo & Huge Bold Title */}
-          <div className="lg:col-span-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
+          {/* Left Column: Brand Logo & Huge Bold Title + Explore CTA */}
+          <div className="lg:col-span-5 text-center lg:text-left flex flex-col items-center lg:items-start z-20">
             <div className="mb-4 sm:mb-6">
               <img
                 src="/assets/joker-official-logo.png"
@@ -125,15 +125,25 @@ export default function Hero() {
               />
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[0.96] uppercase">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[0.96] uppercase mb-6 sm:mb-8">
               Authentic <br />
               <span className="text-joker-red">Indian</span> <br />
               Golisoda.
             </h1>
+
+            <div className="pt-1">
+              <a
+                href="#flavours"
+                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-joker-red hover:bg-joker-red-dark text-white font-extrabold text-sm sm:text-base tracking-wider uppercase shadow-xl shadow-joker-red/35 transition-all hover:scale-105 active:scale-95"
+              >
+                <span>Explore Flavours</span>
+                <ArrowDown className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Center Column: Stage reserved for the sticky Orange Bottle on desktop; Static bottle on mobile */}
-          <div className="lg:col-span-4 flex items-center justify-center relative min-h-0 md:min-h-[380px] lg:min-h-[600px]">
+          <div className="lg:col-span-4 flex items-center justify-center relative min-h-0 md:min-h-[380px] lg:min-h-[600px] z-20">
             {/* Mobile-only static bottle */}
             <div className="block md:hidden my-6">
               <img
@@ -145,31 +155,29 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Big Punchy Text & Action Button */}
-          <div className="lg:col-span-4 text-center lg:text-right flex flex-col items-center lg:items-end z-10">
-            <div className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.02] uppercase mb-8">
-              Unleash The <br />
-              Taste. <br />
-              <span className="text-amber-400">Experience The Twist!</span>
-            </div>
+          {/* Right Column: Grid spacer on desktop */}
+          <div className="hidden lg:block lg:col-span-3" />
+        </div>
 
-            <div>
-              <a
-                href="#flavours"
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-joker-red hover:bg-joker-red-dark text-white font-extrabold text-sm sm:text-base tracking-wider uppercase shadow-xl shadow-joker-red/35 transition-all hover:scale-105 active:scale-95"
-              >
-                <span>Explore Flavours</span>
-                <ArrowDown className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+        {/* Hero Joker Character - Positioned at bottom right covering a prominent level of the page */}
+        <div className="absolute bottom-0 right-0 z-10 pointer-events-none flex items-end justify-end select-none overflow-hidden">
+          {/* Ambient Soda Aura Glow */}
+          <div className="absolute bottom-10 right-10 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-joker-red/20 blur-3xl pointer-events-none" />
+
+          <img
+            src="/assets/herojoker.webp"
+            alt="Joker Mascot"
+            loading="eager"
+            decoding="async"
+            className="relative z-10 h-[280px] sm:h-[400px] md:h-[500px] lg:h-[620px] xl:h-[700px] 2xl:h-[760px] w-auto object-contain object-bottom filter drop-shadow-[0_20px_45px_rgba(0,0,0,0.7)] transition-transform duration-700 hover:scale-105"
+          />
         </div>
 
         {/* Down Scroll Anchor */}
         <a
           href="#about"
           aria-label="Scroll down to About Us"
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-stone-400 hover:text-white transition-colors animate-bounce p-2"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-stone-400 hover:text-white transition-colors animate-bounce p-2 z-30"
         >
           <ArrowDown className="w-5 h-5" />
         </a>
