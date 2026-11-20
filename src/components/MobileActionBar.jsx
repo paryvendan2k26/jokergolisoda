@@ -14,7 +14,7 @@ import { companyDetails } from '../data/flavours';
 export default function MobileActionBar() {
   return (
     <aside
-      className="fixed bottom-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-t border-stone-200/90 shadow-[0_-4px_25px_rgba(0,0,0,0.12)] px-3 py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] md:hidden"
+      className="fixed bottom-0 left-0 right-0 z-40 w-full bg-white/95 backdrop-blur-md border-t border-stone-200/90 shadow-[0_-4px_25px_rgba(0,0,0,0.12)] px-3 py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] md:hidden"
       aria-label="Quick Mobile Actions"
     >
       <div className="flex items-center gap-2.5 w-full max-w-md mx-auto">
