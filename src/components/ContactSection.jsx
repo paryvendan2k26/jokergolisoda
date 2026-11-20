@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, CheckCircle2, Send } from 'lucide-react';
+import { ChevronDown, CheckCircle2, AlertCircle, MessageCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import confetti from 'canvas-confetti';
 import { companyDetails } from '../data/flavours';
@@ -16,6 +16,7 @@ export default function ContactSection() {
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const indianStates = [
     'Tamil Nadu',
@@ -36,18 +37,53 @@ export default function ContactSection() {
       ...prev,
       [e.target.name]: e.target.value
     }));
+    if (errorMessage) setErrorMessage('');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMessage('');
 
+    const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     try {
-      if (serviceId && templateId && publicKey) {
+      let success = false;
+
+      // 1. Web3Forms support (Recommended: fastest 1-key setup)
+      if (web3Key) {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({
+            access_key: web3Key,
+            subject: `New Wholesale Enquiry from ${formData.name} (${formData.city}, ${formData.state})`,
+            from_name: 'Joker Golisoda Website',
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            city: formData.city,
+            state: formData.state,
+            message: formData.message,
+            reply_to: formData.email || companyDetails.email
+          })
+        });
+
+        const resJson = await response.json();
+        if (resJson.success) {
+          success = true;
+        } else {
+          throw new Error(resJson.message || 'Failed to send message via Web3Forms');
+        }
+      }
+      // 2. EmailJS support (Pre-wired alternative)
+      else if (serviceId && templateId && publicKey) {
         await emailjs.send(
           serviceId,
           templateId,
@@ -62,20 +98,29 @@ export default function ContactSection() {
           },
           publicKey
         );
-      } else {
+        success = true;
+      }
+      // 3. Fallback preview mode when keys are not yet added
+      else {
         await new Promise((resolve) => setTimeout(resolve, 600));
-        console.log('Contact Us submission:', formData);
+        console.log('Contact Us submission (Preview mode - add VITE_WEB3FORMS_ACCESS_KEY or EmailJS keys):', formData);
+        success = true;
       }
 
-      setSubmitted(true);
-      confetti({
-        particleCount: 45,
-        spread: 60,
-        origin: { y: 0.8 },
-        colors: ['#84CC16', '#FFFFFF', '#22C55E']
-      });
+      if (success) {
+        setSubmitted(true);
+        confetti({
+          particleCount: 45,
+          spread: 60,
+          origin: { y: 0.8 },
+          colors: ['#84CC16', '#FFFFFF', '#22C55E']
+        });
+      }
     } catch (err) {
-      console.error(err);
+      console.error('Contact form submission error:', err);
+      setErrorMessage(
+        'Unable to send email right now. Please try again or tap below to connect with us directly on WhatsApp.'
+      );
     } finally {
       setLoading(false);
     }
@@ -212,6 +257,27 @@ export default function ContactSection() {
                     className="w-full px-5 py-3.5 rounded-2xl bg-white text-stone-900 placeholder:text-stone-400 font-semibold text-sm sm:text-base border-0 focus:outline-none focus:ring-2 focus:ring-lime-400 shadow-sm resize-none"
                   />
                 </div>
+
+                {/* Error Banner with WhatsApp fallback */}
+                {errorMessage && (
+                  <div className="p-3.5 rounded-2xl bg-red-500/20 border border-red-400/40 text-red-100 text-xs sm:text-sm flex flex-col gap-2">
+                    <div className="flex items-start gap-2">
+                      <AlertCircle className="w-4 h-4 text-red-300 flex-shrink-0 mt-0.5" />
+                      <span>{errorMessage}</span>
+                    </div>
+                    <a
+                      href={`https://wa.me/${companyDetails.whatsappNumber}?text=${encodeURIComponent(
+                        `Hi Joker Golisoda, my enquiry is:\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nCity: ${formData.city}, ${formData.state}\nMessage: ${formData.message}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-4 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs transition-colors self-start"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" />
+                      <span>Send directly via WhatsApp</span>
+                    </a>
+                  </div>
+                )}
 
                 {/* 7. Rounded Lime-Green "SUBMIT NOW" Button */}
                 <div className="pt-2">
