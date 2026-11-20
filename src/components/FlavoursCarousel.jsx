@@ -25,7 +25,7 @@ export default function FlavoursCarousel() {
             Joker Golisoda Flavours
           </h2>
           <p className="text-stone-500 text-sm sm:text-base mt-1 font-normal max-w-2xl">
-            10 authentic Indian golisoda flavours crafted with 100% natural cane sugar and maximum fizz.
+            10 authentic Indian golisoda flavours in classic Codd-neck marble bottles.
           </p>
         </div>
 

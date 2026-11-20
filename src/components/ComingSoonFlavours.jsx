@@ -1,6 +1,6 @@
 import React from 'react';
 import { comingSoonFlavours } from '../data/flavours';
-import { Sparkles, Clock } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 export default function ComingSoonFlavours() {
   const scallopPath =
@@ -15,11 +15,6 @@ export default function ComingSoonFlavours() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-8 sm:mb-10 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-joker-red/10 text-joker-red text-xs font-black uppercase tracking-wider mb-2">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>8 Upcoming Innovations</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-joker-charcoal tracking-tight uppercase">
             Coming Soon Flavours
           </h2>

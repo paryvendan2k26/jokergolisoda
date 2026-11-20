@@ -72,7 +72,7 @@ export default function Customers() {
             </p>
 
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal mb-6 max-w-xl">
-              Delivered in returnable crates of 24 heavy-gauge 300ml Codd-neck glass bottles. Freshly carbonated with 100% natural cane sugar and dispatched with guaranteed doorstep delivery.
+              Delivered in returnable crates of 24 heavy-gauge 300ml Codd-neck glass bottles. Freshly carbonated and dispatched with guaranteed doorstep delivery.
             </p>
 
             {/* Quick Specs */}
