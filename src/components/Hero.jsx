@@ -34,8 +34,8 @@ export default function Hero() {
 
       const mm = gsap.matchMedia();
 
-      // Desktop & Tablet (>= 768px): Centered & tilted -12° in Hero -> Glides to right & tilts +8° in About Us
-      mm.add('(min-width: 768px)', () => {
+      // Desktop (>= 1024px): Centered & tilted -12° in Hero -> Glides to right & tilts +8° in About Us
+      mm.add('(min-width: 1024px)', () => {
         gsap.set(bottleRef.current, {
           rotate: -12,
           scale: 1,
@@ -60,8 +60,8 @@ export default function Hero() {
         });
       });
 
-      // Mobile (< 768px): Animation disabled per user requirement.
-      // Clean in-flow static bottles are rendered in each section's flow on mobile.
+      // Mobile & Tablet (< 1024px): Animation disabled per user requirement.
+      // Clean in-flow layout with centered hero joker mascot.
 
       // Refresh ScrollTrigger once DOM layout stabilizes
       ScrollTrigger.refresh();
@@ -73,9 +73,9 @@ export default function Hero() {
   return (
     <div ref={containerRef} className="relative w-full overflow-visible">
       {/* ========================================================================= */}
-      {/* STICKY ORANGE BOTTLE LAYER (Laptop & Large Screens only: md: / lg:)       */}
+      {/* STICKY ORANGE BOTTLE LAYER (Laptop & Large Screens only: lg:)              */}
       {/* ========================================================================= */}
-      <div className="hidden md:block absolute inset-0 pointer-events-none z-40 overflow-visible">
+      <div className="hidden lg:block absolute inset-0 pointer-events-none z-40 overflow-visible">
         <div className="sticky top-0 h-screen w-full flex items-center justify-center pointer-events-none">
           <div className="relative flex items-center justify-center pointer-events-none">
             <img
@@ -83,7 +83,7 @@ export default function Hero() {
               src="/assets/hero-orange-bottle.webp"
               alt="Joker Golisoda Orange Bottle"
               decoding="async"
-              className="relative z-40 md:h-[480px] lg:h-[580px] w-auto object-contain select-none will-change-transform pointer-events-none"
+              className="relative z-40 lg:h-[580px] xl:h-[620px] w-auto object-contain select-none will-change-transform pointer-events-none"
             />
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function Hero() {
       <section
         ref={heroRef}
         id="home"
-        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-joker-charcoal text-white overflow-hidden pt-20 pb-16 lg:py-0"
+        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-joker-charcoal text-white overflow-hidden pt-20 pb-12 lg:py-0"
         aria-label="Joker Golisoda Hero"
       >
         {/* Subtle Looping Soda Bubbles Background Video */}
@@ -113,11 +113,57 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-t from-joker-charcoal via-joker-charcoal/60 to-transparent" />
         </div>
 
-        {/* Hero 3-Column Grid */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-4">
+        {/* ------------------------------------------------------------- */}
+        {/* MOBILE & TABLET LAYOUT (< 1024px, lg:hidden)                  */}
+        {/* Text higher up + Centered large hero joker mascot (No overlap) */}
+        {/* ------------------------------------------------------------- */}
+        <div className="block lg:hidden relative z-10 w-full max-w-lg mx-auto flex flex-col items-center justify-between min-h-[calc(100vh-6rem)] pt-2 pb-6">
+          {/* Text block positioned higher up */}
+          <div className="flex flex-col items-center text-center z-20">
+            <div className="mb-2">
+              <img
+                src="/assets/joker-official-logo.png"
+                alt="Joker Golisoda"
+                className="h-16 sm:h-20 w-auto object-contain drop-shadow-md"
+              />
+            </div>
+
+            <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-[0.98] uppercase mb-3 sm:mb-4">
+              Authentic <br className="sm:hidden" />
+              <span className="text-joker-red">Indian</span> Golisoda.
+            </h1>
+
+            <div>
+              <a
+                href="#flavours"
+                className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3.5 rounded-full bg-joker-red hover:bg-joker-red-dark text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-xl shadow-joker-red/35 transition-all hover:scale-105 active:scale-95"
+              >
+                <span>Explore Flavours</span>
+                <ArrowDown className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Centered Hero Joker - Bigger, in middle, transparent background, zero overlap */}
+          <div className="relative z-10 w-full flex items-center justify-center my-auto py-2">
+            <img
+              src="/assets/herojoker.webp"
+              alt="Joker Mascot"
+              loading="eager"
+              decoding="async"
+              className="h-[340px] sm:h-[420px] md:h-[480px] max-h-[50vh] w-auto object-contain object-bottom select-none filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
+            />
+          </div>
+        </div>
+
+        {/* ------------------------------------------------------------- */}
+        {/* DESKTOP LAYOUT (>= 1024px, hidden lg:grid)                    */}
+        {/* 3-Column Grid + Animated Bottle Stage + Final Joker at Right */}
+        {/* ------------------------------------------------------------- */}
+        <div className="hidden lg:grid relative z-10 max-w-7xl mx-auto w-full grid-cols-12 items-center gap-4 min-h-screen py-0">
           {/* Left Column: Brand Logo & Huge Bold Title + Explore CTA */}
-          <div className="lg:col-span-5 text-center lg:text-left flex flex-col items-center lg:items-start z-20">
-            <div className="mb-4 sm:mb-6">
+          <div className="col-span-5 text-left flex flex-col items-start z-20">
+            <div className="mb-6">
               <img
                 src="/assets/joker-official-logo.png"
                 alt="Joker Golisoda"
@@ -142,34 +188,21 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Center Column: Stage reserved for the sticky Orange Bottle on desktop (No bottle on mobile) */}
-          <div className="hidden md:flex lg:col-span-4 items-center justify-center relative min-h-[380px] lg:min-h-[600px] z-20" />
+          {/* Center Column: Stage reserved for the sticky Orange Bottle on desktop */}
+          <div className="col-span-4 flex items-center justify-center relative min-h-[600px] z-20" />
 
           {/* Right Column: Grid spacer on desktop */}
-          <div className="hidden lg:block lg:col-span-3" />
+          <div className="col-span-3" />
         </div>
 
-        {/* Hero Joker Character - Positioned at bottom right covering a prominent level of the page */}
-        <div className="absolute bottom-0 right-0 z-10 pointer-events-none flex items-end justify-end select-none overflow-hidden max-w-[90vw] sm:max-w-[75vw] lg:max-w-none">
-          {/* Ambient Soda Aura Glow */}
-          <div className="absolute bottom-10 right-10 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-joker-red/20 blur-3xl pointer-events-none" />
-
-          {/* Desktop Version: finaljoker.webp from Downloads */}
+        {/* Desktop Final Joker Character (>= 1024px) - Clean transparent background, no colored gradient */}
+        <div className="hidden lg:flex absolute bottom-0 right-0 z-10 pointer-events-none items-end justify-end select-none">
           <img
             src="/assets/finaljoker.webp"
             alt="Joker Mascot"
             loading="eager"
             decoding="async"
-            className="hidden md:block relative z-10 h-[480px] lg:h-[620px] xl:h-[700px] 2xl:h-[760px] w-auto object-contain object-bottom filter drop-shadow-[0_20px_45px_rgba(0,0,0,0.7)] transition-transform duration-700 hover:scale-105"
-          />
-
-          {/* Mobile Version: herojoker.webp (bigger, prominent, hero bottle removed) */}
-          <img
-            src="/assets/herojoker.webp"
-            alt="Joker Mascot"
-            loading="eager"
-            decoding="async"
-            className="block md:hidden relative z-10 h-[360px] sm:h-[430px] max-h-[52vh] w-auto object-contain object-bottom filter drop-shadow-[0_15px_35px_rgba(0,0,0,0.65)] select-none"
+            className="relative z-10 h-[560px] xl:h-[680px] 2xl:h-[750px] w-auto object-contain object-bottom filter drop-shadow-[0_20px_45px_rgba(0,0,0,0.7)] transition-transform duration-700 hover:scale-105"
           />
         </div>
 
@@ -177,7 +210,7 @@ export default function Hero() {
         <a
           href="#about"
           aria-label="Scroll down to About Us"
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-stone-400 hover:text-white transition-colors animate-bounce p-2 z-30"
+          className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 text-stone-400 hover:text-white transition-colors animate-bounce p-2 z-30"
         >
           <ArrowDown className="w-5 h-5" />
         </a>
@@ -229,20 +262,19 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right Column: Destination Target for sticky bottle on desktop; In-flow showcase bottle on mobile */}
-            <div className="lg:col-span-5 flex items-center justify-center relative min-h-0 md:min-h-[380px] lg:min-h-[500px] mt-6 lg:mt-0">
-              <div ref={aboutTargetRef} className="w-2 h-2 pointer-events-none hidden md:block" />
+            {/* Right Column: Destination Target for sticky bottle on desktop; In-flow showcase bottle on mobile & tablet */}
+            <div className="lg:col-span-5 flex items-center justify-center relative min-h-0 lg:min-h-[500px] mt-6 lg:mt-0">
+              <div ref={aboutTargetRef} className="w-2 h-2 pointer-events-none hidden lg:block" />
 
-              {/* Mobile-only static showcase bottle */}
-              <div className="block md:hidden text-center py-4">
+              {/* Mobile & Tablet static showcase bottle (< 1024px) */}
+              <div className="block lg:hidden text-center py-4">
                 <div className="relative mx-auto flex items-center justify-center">
-                  <div className="absolute inset-0 bg-joker-red/10 rounded-full blur-2xl transform scale-75" />
                   <img
                     src="/assets/hero-orange-bottle.webp"
                     alt="Joker Golisoda Marble Bottle Heritage"
                     loading="lazy"
                     decoding="async"
-                    className="relative z-10 h-[240px] sm:h-[280px] w-auto object-contain mx-auto rotate-6 drop-shadow-xl select-none"
+                    className="relative z-10 h-[260px] sm:h-[320px] w-auto object-contain mx-auto rotate-6 drop-shadow-xl select-none"
                   />
                 </div>
                 <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-stone-500 mt-4 px-3.5 py-1 bg-white rounded-full border border-stone-200/80 shadow-sm">
