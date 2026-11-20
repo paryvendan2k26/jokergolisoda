@@ -95,7 +95,7 @@ export default function Hero() {
       <section
         ref={heroRef}
         id="home"
-        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-joker-charcoal text-white overflow-hidden pt-20 pb-12 lg:py-0"
+        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-joker-charcoal text-white overflow-hidden pt-20 pb-0 lg:py-0"
         aria-label="Joker Golisoda Hero"
       >
         {/* Subtle Looping Soda Bubbles Background Video */}
@@ -115,11 +115,11 @@ export default function Hero() {
 
         {/* ------------------------------------------------------------- */}
         {/* MOBILE & TABLET LAYOUT (< 1024px, lg:hidden)                  */}
-        {/* Text higher up + Centered large hero joker mascot (No overlap) */}
+        {/* Text higher up + Centered large hero joker mascot (No gap)   */}
         {/* ------------------------------------------------------------- */}
-        <div className="block lg:hidden relative z-10 w-full max-w-lg mx-auto flex flex-col items-center justify-between min-h-[calc(100vh-6rem)] pt-2 pb-6">
+        <div className="block lg:hidden relative z-10 w-full max-w-xl mx-auto flex flex-col items-center justify-between min-h-[calc(100vh-5rem)] pt-2 pb-0">
           {/* Text block positioned higher up */}
-          <div className="flex flex-col items-center text-center z-20">
+          <div className="flex flex-col items-center text-center z-20 flex-shrink-0">
             <div className="mb-2">
               <img
                 src="/assets/joker-official-logo.png"
@@ -144,14 +144,14 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Centered Hero Joker - Bigger, in middle, transparent background, zero overlap */}
-          <div className="relative z-10 w-full flex items-center justify-center my-auto py-2">
+          {/* Centered Hero Joker - Much bigger, anchored directly to bottom of Hero section (No gap to next section) */}
+          <div className="relative z-10 w-full flex-1 flex items-end justify-center pt-2 overflow-hidden">
             <img
               src="/assets/herojoker.webp"
               alt="Joker Mascot"
               loading="eager"
               decoding="async"
-              className="h-[340px] sm:h-[420px] md:h-[480px] max-h-[50vh] w-auto object-contain object-bottom select-none filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
+              className="h-[430px] sm:h-[530px] md:h-[620px] max-h-[62vh] w-auto object-contain object-bottom select-none filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)] translate-y-1"
             />
           </div>
         </div>
@@ -206,11 +206,11 @@ export default function Hero() {
           />
         </div>
 
-        {/* Down Scroll Anchor */}
+        {/* Down Scroll Anchor (Desktop only - on mobile mascot fills the bottom) */}
         <a
           href="#about"
           aria-label="Scroll down to About Us"
-          className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 text-stone-400 hover:text-white transition-colors animate-bounce p-2 z-30"
+          className="hidden lg:flex absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 text-stone-400 hover:text-white transition-colors animate-bounce p-2 z-30"
         >
           <ArrowDown className="w-5 h-5" />
         </a>
