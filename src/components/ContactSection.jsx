@@ -11,7 +11,8 @@ export default function ContactSection() {
     email: '',
     city: '',
     state: '',
-    message: ''
+    message: '',
+    botcheck: '' // Invisible honeypot field to trap spam bots
   });
 
   const [loading, setLoading] = useState(false);
@@ -42,6 +43,14 @@ export default function ContactSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Anti-spam honeypot check: If the hidden bot field is filled, silently ignore
+    if (formData.botcheck) {
+      console.warn('Bot detected and blocked.');
+      setSubmitted(true);
+      return;
+    }
+
     setLoading(true);
     setErrorMessage('');
 
@@ -166,7 +175,7 @@ export default function ContactSection() {
                   type="button"
                   onClick={() => {
                     setSubmitted(false);
-                    setFormData({ name: '', phone: '', email: '', city: '', state: '', message: '' });
+                    setFormData({ name: '', phone: '', email: '', city: '', state: '', message: '', botcheck: '' });
                   }}
                   className="mt-4 px-5 py-2 rounded-full bg-white/20 hover:bg-white/30 text-white text-xs font-bold uppercase tracking-wider transition-colors"
                 >
@@ -175,6 +184,18 @@ export default function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4 max-w-lg w-full">
+                {/* Anti-Spam Honeypot: Hidden from humans, traps automated bots */}
+                <input
+                  type="text"
+                  name="botcheck"
+                  value={formData.botcheck}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden pointer-events-none opacity-0 absolute -z-10"
+                />
+
                 {/* 1. Name */}
                 <div>
                   <input
