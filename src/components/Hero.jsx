@@ -142,34 +142,34 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Center Column: Stage reserved for the sticky Orange Bottle on desktop; Static bottle on mobile */}
-          <div className="lg:col-span-4 flex items-center justify-center relative min-h-0 md:min-h-[380px] lg:min-h-[600px] z-20">
-            {/* Mobile-only static bottle */}
-            <div className="block md:hidden my-6">
-              <img
-                src="/assets/hero-orange-bottle.webp"
-                alt="Joker Golisoda Orange Bottle"
-                decoding="async"
-                className="h-[250px] sm:h-[300px] w-auto object-contain mx-auto -rotate-6 drop-shadow-2xl select-none"
-              />
-            </div>
-          </div>
+          {/* Center Column: Stage reserved for the sticky Orange Bottle on desktop (No bottle on mobile) */}
+          <div className="hidden md:flex lg:col-span-4 items-center justify-center relative min-h-[380px] lg:min-h-[600px] z-20" />
 
           {/* Right Column: Grid spacer on desktop */}
           <div className="hidden lg:block lg:col-span-3" />
         </div>
 
         {/* Hero Joker Character - Positioned at bottom right covering a prominent level of the page */}
-        <div className="absolute bottom-0 right-0 z-10 pointer-events-none flex items-end justify-end select-none overflow-hidden">
+        <div className="absolute bottom-0 right-0 z-10 pointer-events-none flex items-end justify-end select-none overflow-hidden max-w-[90vw] sm:max-w-[75vw] lg:max-w-none">
           {/* Ambient Soda Aura Glow */}
           <div className="absolute bottom-10 right-10 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-joker-red/20 blur-3xl pointer-events-none" />
 
+          {/* Desktop Version: finaljoker.webp from Downloads */}
+          <img
+            src="/assets/finaljoker.webp"
+            alt="Joker Mascot"
+            loading="eager"
+            decoding="async"
+            className="hidden md:block relative z-10 h-[480px] lg:h-[620px] xl:h-[700px] 2xl:h-[760px] w-auto object-contain object-bottom filter drop-shadow-[0_20px_45px_rgba(0,0,0,0.7)] transition-transform duration-700 hover:scale-105"
+          />
+
+          {/* Mobile Version: herojoker.webp (bigger, prominent, hero bottle removed) */}
           <img
             src="/assets/herojoker.webp"
             alt="Joker Mascot"
             loading="eager"
             decoding="async"
-            className="relative z-10 h-[280px] sm:h-[400px] md:h-[500px] lg:h-[620px] xl:h-[700px] 2xl:h-[760px] w-auto object-contain object-bottom filter drop-shadow-[0_20px_45px_rgba(0,0,0,0.7)] transition-transform duration-700 hover:scale-105"
+            className="block md:hidden relative z-10 h-[360px] sm:h-[430px] max-h-[52vh] w-auto object-contain object-bottom filter drop-shadow-[0_15px_35px_rgba(0,0,0,0.65)] select-none"
           />
         </div>
 
