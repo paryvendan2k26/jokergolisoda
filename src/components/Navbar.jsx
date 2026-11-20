@@ -115,22 +115,25 @@ export default function Navbar() {
             <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 whitespace-nowrap">
               <a
                 href={`tel:${companyDetails.phone}`}
-                className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold transition-all whitespace-nowrap"
-                aria-label="Call Wholesale Hotline"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold transition-all whitespace-nowrap"
+                aria-label={`Call Wholesale Hotline ${companyDetails.phone}`}
               >
                 <Phone className="w-3.5 h-3.5 text-joker-red" />
-                <span className="hidden xl:inline">{companyDetails.phoneFormatted}</span>
-                <span className="xl:hidden">Call</span>
+                <span>Call</span>
               </a>
 
+              {/* WhatsApp / Ordering Button with Number 8825751371 */}
               <a
-                href={`https://wa.me/${companyDetails.whatsappNumber}`}
+                href={`https://wa.me/${companyDetails.whatsappNumber}?text=${encodeURIComponent('Hello Joker Golisoda, I would like to place an order for bottles (₹35 MRP).')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-joker-red hover:bg-joker-red-dark text-white text-xs sm:text-sm font-extrabold transition-all shadow-sm hover:scale-105 active:scale-95 whitespace-nowrap"
+                className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-joker-red hover:bg-joker-red-dark text-white text-xs sm:text-sm font-extrabold transition-all shadow-sm hover:scale-105 active:scale-95 whitespace-nowrap"
+                title="Order on WhatsApp: 8825751371"
+                aria-label="Order on WhatsApp: 8825751371"
               >
                 <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                <span>Order</span>
+                <span className="hidden sm:inline">Order:</span>
+                <span>8825751371</span>
               </a>
 
               {/* Mobile Hamburger / Close Button */}
@@ -173,6 +176,17 @@ export default function Navbar() {
 
             <div className="mt-2 pt-2 border-t border-stone-100 flex flex-col gap-2">
               <a
+                href={`https://wa.me/${companyDetails.whatsappNumber}?text=${encodeURIComponent('Hello Joker Golisoda, I would like to place an order for bottles (₹35 MRP).')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-joker-red hover:bg-joker-red-dark text-white text-xs font-extrabold shadow-sm active:scale-98 transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Order on WhatsApp: 8825751371</span>
+              </a>
+
+              <a
                 href={`tel:${companyDetails.phone}`}
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-stone-50 hover:bg-stone-100 text-stone-800 text-xs font-bold transition-colors"
@@ -181,7 +195,7 @@ export default function Navbar() {
                   <Phone className="w-4 h-4 text-joker-red" />
                   <span>Call Hotline</span>
                 </span>
-                <span className="text-stone-500 font-mono text-[11px]">{companyDetails.phoneFormatted}</span>
+                <span className="text-stone-600 font-mono text-[11px] font-bold">{companyDetails.phoneFormatted}</span>
               </a>
             </div>
           </div>

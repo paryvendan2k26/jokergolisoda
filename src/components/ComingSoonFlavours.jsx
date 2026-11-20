@@ -84,8 +84,8 @@ export default function ComingSoonFlavours() {
                   <Clock className="w-3 h-3 text-amber-300" />
                   <span>300ML</span>
                 </div>
-                <span className="text-[10px] font-black text-white/80 bg-white/15 px-2 py-0.5 rounded">
-                  ₹30/35
+                <span className="text-[10px] font-black text-white/90 bg-white/15 px-2 py-0.5 rounded">
+                  ₹35 MRP
                 </span>
               </div>
             </div>

@@ -18,7 +18,7 @@ export const flavours = [
     bottleImage: "/bottles/paneer-soda.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve ice-cold. Ideal for celebrations, family gatherings, street food pairings, and hot sunny afternoons.",
   },
   {
@@ -35,7 +35,7 @@ export const flavours = [
     bottleImage: "/bottles/blueberry.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve ice-cold. Perfect for trendy hangouts, events, or whenever you want a sweet and fruity burst of energy.",
   },
   {
@@ -52,7 +52,7 @@ export const flavours = [
     bottleImage: "/bottles/mango.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve ice-cold. A summer celebration favorite pairing deliciously with meals and snacks.",
   },
   {
@@ -69,7 +69,7 @@ export const flavours = [
     bottleImage: "/bottles/orange.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve ice-cold. Great for lunch pairings, celebrations, family gatherings, and everyday refreshing breaks.",
   },
   {
@@ -86,7 +86,7 @@ export const flavours = [
     bottleImage: "/bottles/pineapple.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve ice-cold. The perfect tropical accompaniment for fast food, beach outings, parties, and outdoor events.",
   },
   {
@@ -103,7 +103,7 @@ export const flavours = [
     bottleImage: "/bottles/ginger-lemon.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve chilled. Exceptional post-meal digestive and companion for heavy feasts and evening chats.",
   },
   {
@@ -120,7 +120,7 @@ export const flavours = [
     bottleImage: "/bottles/watermelon.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve frosty cold on warm afternoons.",
   },
   {
@@ -137,7 +137,7 @@ export const flavours = [
     bottleImage: "/bottles/kiwi.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve frosty cold with savory street snacks.",
   },
   {
@@ -154,7 +154,7 @@ export const flavours = [
     bottleImage: "/bottles/guava.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve ice-cold with savory snacks.",
   },
   {
@@ -171,7 +171,7 @@ export const flavours = [
     bottleImage: "/bottles/litchi.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve ice-cold for gatherings and celebrations.",
   },
   {
@@ -188,7 +188,7 @@ export const flavours = [
     bottleImage: "/bottles/red-apple.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve ice-cold with desserts and party platters.",
   },
   {
@@ -205,7 +205,7 @@ export const flavours = [
     bottleImage: "/bottles/blackberry.webp",
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
-    price: "₹30 – ₹35",
+    price: "₹35 MRP",
     servingSuggestion: "Serve chilled after meals.",
   }
 ];
@@ -370,12 +370,12 @@ export const companyDetails = {
   established: "2026",
   tagline: "Unleash the Taste. Experience the Twist!",
   slogan: "Every Bottle Has a Twist! • Refreshing India, One Bottle at a Time.",
-  phone: "+91 90039 31027",
-  phoneFormatted: "+91 90039 31027",
-  whatsappNumber: "919003931027",
-  secondaryPhone: "+91 88257 51371",
-  secondaryPhoneFormatted: "+91 88257 51371",
-  secondaryWhatsappNumber: "918825751371",
+  phone: "+91 88257 51371",
+  phoneFormatted: "+91 88257 51371",
+  whatsappNumber: "918825751371",
+  secondaryPhone: "+91 90039 31027",
+  secondaryPhoneFormatted: "+91 90039 31027",
+  secondaryWhatsappNumber: "919003931027",
   email: "jokerssodaa@gmail.com",
   instagram: "https://instagram.com/jokergolisoda",
   instagramHandle: "jokergolisoda",
@@ -387,7 +387,8 @@ export const companyDetails = {
   googleMapsEmbed: "https://maps.google.com/maps?q=SF.NO:+113/1A,+Chennasandiram,+Uliyalam,+Hosur,+Tamil+Nadu+635109&t=&z=14&ie=UTF8&iwloc=&output=embed",
   bottleCapacity: "300ml",
   crateQuantity: "24 Bottles per Crate",
-  priceRange: "₹30 – ₹35 per Bottle"
+  priceRange: "₹35 MRP per Bottle",
+  mrp: "₹35 MRP"
 };
 
 export const foundersList = [

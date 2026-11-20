@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FlavoursCarousel from './components/FlavoursCarousel';
 import ComingSoonFlavours from './components/ComingSoonFlavours';
-import TopSellers from './components/TopSellers';
 import Customers from './components/Customers';
 import Manufacturing from './components/Manufacturing';
 import Certifications from './components/Certifications';
@@ -27,26 +26,23 @@ export default function App() {
         {/* 3. Coming Soon - 8 Exciting Flavours from Official Portfolio */}
         <ComingSoonFlavours />
 
-        {/* 4. Top Best Sellers (Bottle image & name only) */}
-        <TopSellers />
-
-        {/* 5. Batch Delivery Workflow */}
+        {/* 4. Batch Delivery Workflow */}
         <Customers />
 
-        {/* 6. Bottling Unit - Moving Factory Photos Reel */}
+        {/* 5. Bottling Unit - Moving Factory Photos Reel */}
         <Manufacturing />
 
-        {/* 7. Statutory Licenses Only */}
+        {/* 6. Statutory Licenses Only */}
         <Certifications />
 
-        {/* 8. Order / Wholesale Contact & Google Maps */}
+        {/* 7. Order / Wholesale Contact & Google Maps */}
         <ContactSection />
       </main>
 
-      {/* 9. Footer */}
+      {/* 8. Footer */}
       <Footer />
 
-      {/* 10. Mobile Sticky Action Bar: WhatsApp (light green) + Call Now (dark green) */}
+      {/* 9. Mobile Sticky Action Bar: WhatsApp (light green) + Call Now (dark green) */}
       <MobileActionBar />
     </div>
   );

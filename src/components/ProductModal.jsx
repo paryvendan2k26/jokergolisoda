@@ -65,7 +65,7 @@ export default function ProductModal({ flavour, onClose }) {
         </p>
 
         <div className="text-xs text-stone-500 font-bold mb-6">
-          300ml • ₹30 – ₹35
+          300ml • ₹35 MRP
         </div>
 
         {/* Clean Action Buttons */}
