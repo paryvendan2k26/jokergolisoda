@@ -1,18 +1,18 @@
 import React from 'react';
 
 /**
- * Vertical rounded-corner product card
+ * Compact, clean product card for responsive grid
  * Features:
  * - Bold solid background color
  * - Thin, inset dashed inner border
- * - Top-left white scalloped starburst badge displaying year in card's accent color
- * - Bottom-right subtle lighter-toned quarter-circle backdrop
- * - Realistic product cutout slightly overlapping the bottom edge
- * - Bottom-left stacked typography: bold title, short subtitle, and dark translucent badge
+ * - Top-left white scalloped starburst badge displaying year
+ * - Top-right 300ml pill badge
+ * - Bottle image cutout with drop shadow
+ * - Clean title and subtitle typography
  */
 export default function FlavourCard({ flavour, onSelect }) {
-  // 16-lobed smooth scalloped rosette path
-  const scallopPath = "M 56.00 32.00 Q 60.44 37.66 54.17 41.18 Q 56.11 48.11 48.97 48.97 Q 48.11 56.11 41.18 54.17 Q 37.66 60.44 32.00 56.00 Q 26.34 60.44 22.82 54.17 Q 15.89 56.11 15.03 48.97 Q 7.89 48.11 9.83 41.18 Q 3.56 37.66 8.00 32.00 Q 3.56 26.34 9.83 22.82 Q 7.89 15.89 15.03 15.03 Q 15.89 7.89 22.82 9.83 Q 26.34 3.56 32.00 8.00 Q 37.66 3.56 41.18 9.83 Q 48.11 7.89 48.97 15.03 Q 56.11 15.89 54.17 22.82 Q 60.44 26.34 56.00 32.00 Z";
+  const scallopPath =
+    "M 56.00 32.00 Q 60.44 37.66 54.17 41.18 Q 56.11 48.11 48.97 48.97 Q 48.11 56.11 41.18 54.17 Q 37.66 60.44 32.00 56.00 Q 26.34 60.44 22.82 54.17 Q 15.89 56.11 15.03 48.97 Q 7.89 48.11 9.83 41.18 Q 3.56 37.66 8.00 32.00 Q 3.56 26.34 9.83 22.82 Q 7.89 15.89 15.03 15.03 Q 15.89 7.89 22.82 9.83 Q 26.34 3.56 32.00 8.00 Q 37.66 3.56 41.18 9.83 Q 48.11 7.89 48.97 15.03 Q 56.11 15.89 54.17 22.82 Q 60.44 26.34 56.00 32.00 Z";
 
   return (
     <div
@@ -25,33 +25,26 @@ export default function FlavourCard({ flavour, onSelect }) {
           onSelect(flavour);
         }
       }}
-      className="group relative w-[300px] sm:w-[320px] h-[460px] sm:h-[480px] flex-shrink-0 cursor-pointer select-none transition-transform duration-300 hover:-translate-y-2"
+      className="group relative w-full h-[260px] sm:h-[285px] md:h-[310px] rounded-2xl sm:rounded-3xl cursor-pointer select-none overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-md hover:shadow-xl flex flex-col justify-between p-3.5 sm:p-4"
+      style={{ backgroundColor: flavour.cardBg }}
       aria-label={`View ${flavour.name}`}
     >
-      {/* Solid Rounded Card Container with clipped background effects */}
+      {/* Decorative quarter-circle in bottom right */}
       <div
-        className="absolute inset-0 rounded-[32px] overflow-hidden shadow-xl group-hover:shadow-2xl transition-shadow duration-300"
-        style={{ backgroundColor: flavour.cardBg }}
-      >
-        {/* Bottom-right subtle lighter-toned quarter-circle backdrop */}
-        <div
-          className="absolute -bottom-10 -right-10 w-64 h-64 rounded-full pointer-events-none"
-          style={{ backgroundColor: flavour.quarterCircleBg || 'rgba(255, 255, 255, 0.18)' }}
-        />
+        className="absolute -bottom-8 -right-8 w-36 h-36 sm:w-44 sm:h-44 rounded-full pointer-events-none transition-transform duration-500 group-hover:scale-110"
+        style={{ backgroundColor: flavour.quarterCircleBg || 'rgba(255, 255, 255, 0.18)' }}
+      />
 
-        {/* Thin, inset dashed inner border */}
-        <div className="absolute inset-3.5 sm:inset-4 rounded-[22px] border border-dashed border-white/50 pointer-events-none z-10" />
-      </div>
+      {/* Inset dashed inner border */}
+      <div className="absolute inset-2 sm:inset-2.5 rounded-xl sm:rounded-2xl border border-dashed border-white/40 pointer-events-none z-10" />
 
-      {/* Top-left: White Scalloped Starburst Badge displaying the year */}
-      <div className="absolute top-6 left-6 z-20 drop-shadow-md">
+      {/* Top Row: Scalloped Starburst Badge displaying Year & Volume Pill */}
+      <div className="relative z-20 flex items-start justify-between">
         <svg
           viewBox="0 0 64 64"
-          className="w-12 h-12 sm:w-14 sm:h-14 transition-transform duration-300 group-hover:rotate-12"
+          className="w-8 h-8 sm:w-9 sm:h-9 transition-transform duration-300 group-hover:rotate-12 drop-shadow-sm flex-shrink-0"
         >
-          {/* White scalloped starburst rosette */}
           <path d={scallopPath} fill="#FFFFFF" />
-          {/* Year in card's primary accent color */}
           <text
             x="32"
             y="37"
@@ -65,24 +58,33 @@ export default function FlavourCard({ flavour, onSelect }) {
             {flavour.year || '2026'}
           </text>
         </svg>
+
+        <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-white/90 bg-black/25 backdrop-blur-sm px-2 py-0.5 rounded-full">
+          300ml
+        </span>
       </div>
 
-      {/* Realistic Product Cutout layered in front of the quarter-circle, slightly overlapping the bottom edge */}
-      <div className="absolute right-1 sm:right-2 -bottom-3 sm:-bottom-4 z-20 pointer-events-none">
+      {/* Realistic Product Cutout layered on right */}
+      <div className="absolute right-0 sm:right-1 -bottom-2 sm:-bottom-3 z-20 pointer-events-none">
         <img
           src={flavour.bottleImage}
           alt={flavour.name}
           loading="lazy"
-          className="h-[340px] sm:h-[365px] w-auto object-contain filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.35)] transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-1"
+          decoding="async"
+          className="h-[180px] sm:h-[200px] md:h-[225px] w-auto object-contain filter drop-shadow-[0_10px_16px_rgba(0,0,0,0.35)] transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-2"
         />
       </div>
 
-      {/* Bottom-left: Clean White Sans-Serif Typography Stack */}
-      <div className="absolute bottom-7 left-7 z-20 max-w-[55%] flex flex-col items-start text-left pointer-events-none">
-        {/* Bold Product Title */}
-        <h3 className="text-2xl sm:text-[28px] font-black text-white uppercase tracking-tight leading-none drop-shadow-sm">
+      {/* Bottom-left: Clean White Typography Stack */}
+      <div className="relative z-20 max-w-[58%] flex flex-col items-start text-left pointer-events-none">
+        <h3 className="text-sm sm:text-base md:text-lg font-black text-white uppercase tracking-tight leading-tight drop-shadow-sm">
           {flavour.name}
         </h3>
+        {flavour.subName && (
+          <p className="text-[10px] sm:text-xs font-semibold text-white/85 line-clamp-1 mt-0.5 drop-shadow-sm">
+            {flavour.subName}
+          </p>
+        )}
       </div>
     </div>
   );
