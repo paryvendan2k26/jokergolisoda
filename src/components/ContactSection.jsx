@@ -227,23 +227,71 @@ export default function ContactSection() {
             )}
           </div>
 
-          {/* Right Column: PNG Image of jokercontactus */}
-          <div className="flex items-center justify-center">
-            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
-              {/* Soft ambient green backlight */}
-              <div className="absolute inset-0 bg-lime-400/20 rounded-3xl blur-2xl transform scale-95 pointer-events-none" />
+          {/* Right Column: 5 bottles arranged horizontally in a triangle shape (smaller -> larger -> smaller) */}
+          <div className="flex flex-col items-center justify-center relative w-full pt-8 lg:pt-0">
+            {/* Ambient soda backlight glow */}
+            <div className="absolute inset-0 bg-lime-400/15 rounded-full blur-3xl transform scale-90 pointer-events-none" />
 
-              <picture>
-                <source srcSet="/assets/jokercontactus.webp" type="image/webp" />
+            {/* 5 Bottles Horizontal Triangle Row */}
+            <div className="relative z-10 flex items-end justify-center gap-1 sm:gap-2.5 md:gap-3.5 w-full max-w-xl mx-auto select-none pointer-events-none">
+              {/* Bottle 1: Small Left (Kiwi) */}
+              <div className="flex flex-col items-center -rotate-3 transition-transform duration-500 hover:scale-105">
                 <img
-                  src="/assets/jokercontactus.png"
-                  alt="Joker Golisoda Contact Us"
+                  src="/bottles/kiwi.webp"
+                  alt="Joker Golisoda Kiwi Bottle"
                   loading="lazy"
                   decoding="async"
-                  className="relative z-10 w-full h-auto object-contain rounded-3xl drop-shadow-[0_20px_35px_rgba(0,0,0,0.35)] select-none pointer-events-none transition-transform duration-500 hover:scale-[1.02]"
+                  className="h-36 sm:h-48 md:h-56 lg:h-64 w-auto object-contain filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.45)]"
                 />
-              </picture>
+              </div>
+
+              {/* Bottle 2: Medium Left (Blueberry) */}
+              <div className="flex flex-col items-center -rotate-1 transition-transform duration-500 hover:scale-105 -ml-1 sm:-ml-2">
+                <img
+                  src="/bottles/blueberry.webp"
+                  alt="Joker Golisoda Blueberry Bottle"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-44 sm:h-56 md:h-68 lg:h-76 w-auto object-contain filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
+                />
+              </div>
+
+              {/* Bottle 3: Largest Center Peak (Paneer Soda) */}
+              <div className="relative z-20 flex flex-col items-center transition-transform duration-500 hover:scale-105 -ml-1 sm:-ml-2">
+                <img
+                  src="/bottles/paneer-soda.webp"
+                  alt="Joker Golisoda Paneer Soda Bottle"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-52 sm:h-68 md:h-80 lg:h-92 w-auto object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.55)] scale-105"
+                />
+              </div>
+
+              {/* Bottle 4: Medium Right (Orange) */}
+              <div className="flex flex-col items-center rotate-1 transition-transform duration-500 hover:scale-105 -ml-1 sm:-ml-2">
+                <img
+                  src="/bottles/orange.webp"
+                  alt="Joker Golisoda Orange Bottle"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-44 sm:h-56 md:h-68 lg:h-76 w-auto object-contain filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
+                />
+              </div>
+
+              {/* Bottle 5: Small Right (Pineapple) */}
+              <div className="flex flex-col items-center rotate-3 transition-transform duration-500 hover:scale-105 -ml-1 sm:-ml-2">
+                <img
+                  src="/bottles/pineapple.webp"
+                  alt="Joker Golisoda Pineapple Bottle"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-36 sm:h-48 md:h-56 lg:h-64 w-auto object-contain filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.45)]"
+                />
+              </div>
             </div>
+
+            {/* Pedestal Shadow */}
+            <div className="relative z-10 w-4/5 max-w-md h-3 sm:h-4 bg-black/35 rounded-full blur-md mt-1 mx-auto" />
           </div>
         </div>
       </div>
