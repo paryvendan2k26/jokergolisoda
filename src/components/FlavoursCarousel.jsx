@@ -18,20 +18,14 @@ export default function FlavoursCarousel() {
     if (!track) return;
 
     const halfWidth = track.scrollWidth / 2;
-    if (!halfWidth) return;
 
-    // Continuous smooth linear marquee
     const tween = gsap.to(track, {
       x: `-=${halfWidth}`,
       duration: 38,
       ease: 'none',
       repeat: -1,
       modifiers: {
-        x: gsap.utils.unitize((x) => {
-          let val = parseFloat(x) % halfWidth;
-          if (val > 0) val -= halfWidth;
-          return val;
-        }),
+        x: gsap.utils.unitize((x) => parseFloat(x) % halfWidth),
       },
     });
 
@@ -50,23 +44,11 @@ export default function FlavoursCarousel() {
     if (tweenRef.current) tweenRef.current.play();
   };
 
-  // 100% reliable manual navigation that tweens the continuous marquee
   const handleManualScroll = (direction) => {
-    const tween = tweenRef.current;
-    const track = trackRef.current;
-    if (!tween || !track) return;
-
-    const halfWidth = track.scrollWidth / 2;
-    if (!halfWidth) return;
-
-    // Time delta equivalent to 1 card distance (approx 340px)
-    const cardStep = 340;
-    const timeDelta = (cardStep / halfWidth) * 38;
-    const shift = direction === 'left' ? -timeDelta : timeDelta;
-
-    // Smoothly shift the active tween time forward or backward
-    gsap.to(tween, {
-      time: `+=${shift}`,
+    if (!trackRef.current) return;
+    const shift = direction === 'left' ? 340 : -340;
+    gsap.to(trackRef.current, {
+      x: `+=${shift}`,
       duration: 0.5,
       ease: 'power2.out',
     });
@@ -78,7 +60,7 @@ export default function FlavoursCarousel() {
     <section
       id="flavours"
       className="py-20 bg-joker-cream-light border-y border-stone-200/80 relative overflow-hidden"
-      aria-label="Joker Golisoda Flavours"
+      aria-label="Our Flavours"
     >
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
@@ -93,20 +75,18 @@ export default function FlavoursCarousel() {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex items-center gap-2 relative z-20">
+          <div className="flex items-center gap-2">
             <button
-              type="button"
               onClick={() => handleManualScroll('left')}
-              className="p-2.5 rounded-full bg-white border border-stone-300 hover:border-joker-red text-stone-700 hover:text-joker-red transition-all shadow-sm cursor-pointer active:scale-95"
-              aria-label="Previous Flavours"
+              className="p-2.5 rounded-full bg-white border border-stone-300 hover:border-joker-red text-stone-700 hover:text-joker-red transition-all shadow-sm"
+              aria-label="Previous"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
-              type="button"
               onClick={() => handleManualScroll('right')}
-              className="p-2.5 rounded-full bg-white border border-stone-300 hover:border-joker-red text-stone-700 hover:text-joker-red transition-all shadow-sm cursor-pointer active:scale-95"
-              aria-label="Next Flavours"
+              className="p-2.5 rounded-full bg-white border border-stone-300 hover:border-joker-red text-stone-700 hover:text-joker-red transition-all shadow-sm"
+              aria-label="Next"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

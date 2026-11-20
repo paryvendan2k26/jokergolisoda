@@ -83,16 +83,6 @@ export default function FlavourCard({ flavour, onSelect }) {
         <h3 className="text-2xl sm:text-[28px] font-black text-white uppercase tracking-tight leading-none drop-shadow-sm">
           {flavour.name}
         </h3>
-
-        {/* Short Subtitle */}
-        <p className="text-xs sm:text-sm font-semibold text-white/90 leading-tight mt-1.5 drop-shadow-sm">
-          {flavour.subName || flavour.tagline}
-        </p>
-
-        {/* Dark Translucent Rectangular Badge with small uppercase text */}
-        <div className="mt-3 px-2.5 py-1 rounded bg-black/40 backdrop-blur-sm border border-white/15 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-white shadow-sm">
-          {flavour.badgeText || '200ML • CODD BOTTLE'}
-        </div>
       </div>
     </div>
   );

@@ -60,7 +60,7 @@ export default function Hero() {
         });
       });
 
-      // Mobile (< 768px): Animation is disabled per user request.
+      // Mobile (< 768px): Animation disabled per user requirement.
       // Clean in-flow static bottles are rendered in each section's flow on mobile.
 
       // Refresh ScrollTrigger once DOM layout stabilizes
@@ -119,9 +119,9 @@ export default function Hero() {
           <div className="lg:col-span-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
             <div className="mb-4 sm:mb-6">
               <img
-                src="/assets/logo-white.png"
+                src="/assets/joker-official-logo.png"
                 alt="Joker Golisoda"
-                className="h-14 sm:h-20 w-auto object-contain drop-shadow-md"
+                className="h-20 sm:h-28 w-auto object-contain drop-shadow-md"
               />
             </div>
 
@@ -148,9 +148,9 @@ export default function Hero() {
           {/* Right Column: Big Punchy Text & Action Button */}
           <div className="lg:col-span-4 text-center lg:text-right flex flex-col items-center lg:items-end z-10">
             <div className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.02] uppercase mb-8">
-              Natural <br />
-              Cane Sugar. <br />
-              <span className="text-amber-400">Pure Fizz.</span>
+              Unleash The <br />
+              Taste. <br />
+              <span className="text-amber-400">Experience The Twist!</span>
             </div>
 
             <div>
@@ -193,34 +193,13 @@ export default function Hero() {
               </span>
 
               <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-joker-charcoal tracking-tight leading-[1.08] mb-6">
-                The Real Marble Soda Heritage.
+                Unleash the Taste. <br />
+                <span className="text-joker-red">Experience the Twist!</span>
               </h2>
 
-              <p className="text-base sm:text-lg text-stone-700 leading-relaxed font-normal mb-5 max-w-xl">
-                Joker Golisoda by <strong>Dhanvin Foods</strong> revives the pure nostalgia of authentic Indian Codd-neck marble soda. Crafted with 100% natural cane sugar, 7-stage RO purified water, and genuine fruit extracts.
+              <p className="text-base sm:text-lg text-stone-700 leading-relaxed font-normal mb-8 max-w-xl">
+                Welcome to <strong>Joker Golisoda</strong>, where traditional refreshment meets exciting flavours and a bold, playful identity!
               </p>
-
-              <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal mb-8 max-w-xl">
-                Every bottle delivers that unmistakable thunderous marble pop and crisp, high-effervescence carbonation in heavy-gauge returnable glass bottles.
-              </p>
-
-              {/* 3 Simple Pillars */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-xl">
-                <div className="p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
-                  <span className="text-xs font-bold text-stone-900 block mb-0.5">100% Cane Sugar</span>
-                  <span className="text-[11px] text-stone-500">Zero artificial sweeteners</span>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
-                  <span className="text-xs font-bold text-stone-900 block mb-0.5">Codd Glass Bottle</span>
-                  <span className="text-[11px] text-stone-500">Recyclable marble seal</span>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
-                  <span className="text-xs font-bold text-stone-900 block mb-0.5">High Effervescence</span>
-                  <span className="text-[11px] text-stone-500">Maximum fizzy bite</span>
-                </div>
-              </div>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4">

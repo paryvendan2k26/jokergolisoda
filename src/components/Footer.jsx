@@ -1,32 +1,77 @@
 import React from 'react';
+import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { companyDetails } from '../data/flavours';
 
 export default function Footer() {
   return (
-    <footer className="bg-joker-charcoal text-white py-12 border-t border-stone-800 text-center">
+    <footer className="bg-joker-charcoal text-white py-14 border-t border-stone-800 text-center">
       <div className="max-w-4xl mx-auto px-4 flex flex-col items-center">
-        <img
-          src="/assets/logo-white.png"
-          alt="Joker Golisoda"
-          className="h-9 w-auto object-contain mb-4"
-        />
+        {/* Brand Logo */}
+        <a href="#" className="inline-block mb-4 group" aria-label="Joker Golisoda Home">
+          <img
+            src="/assets/joker-official-logo.png"
+            alt="Joker Golisoda"
+            className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+        </a>
 
-        <p className="text-stone-400 text-xs sm:text-sm max-w-lg mb-6">
-          <strong>Joker Golisoda</strong> is an authentic Indian Codd-neck marble soda brand manufactured by <strong>{companyDetails.parentCompany}</strong>. Pure cane sugar, returnable glass bottles, and statutory FSSAI compliance.
+        {/* Tagline */}
+        <p className="text-amber-400 font-bold text-xs uppercase tracking-wider mb-6">
+          {companyDetails.tagline}
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-stone-400 mb-8">
-          <a href="#about" className="hover:text-white transition-colors">About</a>
-          <a href="#flavours" className="hover:text-white transition-colors">Flavours</a>
-          <a href="#top-sellers" className="hover:text-white transition-colors">Top Sellers</a>
-          <a href="#delivery" className="hover:text-white transition-colors">Batch Delivery</a>
-          <a href="#manufacturing" className="hover:text-white transition-colors">Bottling Unit</a>
-          <a href="#licenses" className="hover:text-white transition-colors">Licenses</a>
-          <a href="#founders" className="hover:text-white transition-colors">Founders</a>
-          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-          <a href={`tel:${companyDetails.phone}`} className="hover:text-white transition-colors">{companyDetails.phoneFormatted}</a>
+        {/* Contact Strip */}
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-stone-300 mb-8 pb-6 border-b border-stone-800/80 w-full">
+          <a
+            href={`tel:${companyDetails.phone}`}
+            className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+          >
+            <Phone className="w-3.5 h-3.5 text-joker-red" />
+            <span>{companyDetails.phoneFormatted} (Hotline)</span>
+          </a>
+
+          <a
+            href={`tel:${companyDetails.secondaryPhone}`}
+            className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+          >
+            <Phone className="w-3.5 h-3.5 text-amber-500" />
+            <span>{companyDetails.secondaryPhoneFormatted} (Plant)</span>
+          </a>
+
+          <a
+            href={`mailto:${companyDetails.email}`}
+            className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+          >
+            <Mail className="w-3.5 h-3.5 text-emerald-400" />
+            <span>{companyDetails.email}</span>
+          </a>
+
+          <a
+            href={companyDetails.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 hover:text-white transition-colors"
+          >
+            <span>Instagram: @{companyDetails.instagramHandle}</span>
+          </a>
+
+          <a
+            href={companyDetails.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 hover:text-white transition-colors"
+          >
+            <span>Facebook: {companyDetails.facebookHandle}</span>
+          </a>
         </div>
 
+        {/* Plant Address */}
+        <div className="flex items-center justify-center gap-2 text-xs text-stone-400 mb-6 max-w-md">
+          <MapPin className="w-4 h-4 text-joker-red flex-shrink-0" />
+          <span>{companyDetails.factoryAddress}</span>
+        </div>
+
+        {/* Copyright */}
         <div className="text-[11px] text-stone-500">
           © {companyDetails.established} {companyDetails.parentCompany}. All rights reserved. Brand: <strong>{companyDetails.brandName}</strong>.
         </div>

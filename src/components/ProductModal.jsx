@@ -42,13 +42,10 @@ export default function ProductModal({ flavour, onClose }) {
           <X className="w-5 h-5" />
         </button>
 
-        {/* Flavour Title & Quote */}
-        <h3 className="text-2xl sm:text-3xl font-black text-stone-900 mb-1">
+        {/* Flavour Title */}
+        <h3 className="text-2xl sm:text-3xl font-black text-stone-900 mb-6">
           {flavour.name}
         </h3>
-        <p className="text-xs sm:text-sm text-stone-500 italic mb-6">
-          "{flavour.tagline}"
-        </p>
 
         {/* Bottle Image */}
         <div
@@ -67,8 +64,8 @@ export default function ProductModal({ flavour, onClose }) {
           {flavour.shortDescription}
         </p>
 
-        <div className="text-xs text-stone-500 font-medium mb-6">
-          Standard 200 ml Glass Codd Bottle • 24 Bottles per Crate
+        <div className="text-xs text-stone-500 font-bold mb-6">
+          300ml • ₹30 – ₹35
         </div>
 
         {/* Clean Action Buttons */}

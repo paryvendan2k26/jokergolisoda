@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FlavoursCarousel from './components/FlavoursCarousel';
+import ComingSoonFlavours from './components/ComingSoonFlavours';
 import TopSellers from './components/TopSellers';
 import Customers from './components/Customers';
 import Manufacturing from './components/Manufacturing';
@@ -13,36 +14,40 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-joker-cream text-joker-charcoal selection:bg-joker-red selection:text-white">
-      {/* Floating Island Navbar (disappears past hero) */}
+      {/* Floating Island Navbar (Floats & appears on every section) */}
       <Navbar />
 
       <main className="flex-1">
-        {/* 1. Hero */}
+        {/* 1. Hero & About Us with smooth animated bottle transition */}
         <Hero />
 
         {/* 2. Our Flavours - Clean GSAP Ticker */}
         <FlavoursCarousel />
 
-        {/* 3. Top 5 Best Sellers Leaderboard */}
+        {/* 3. Coming Soon - 8 Exciting Flavours from Official Portfolio */}
+        <ComingSoonFlavours />
+
+        {/* 4. Top Best Sellers Leaderboard */}
         <TopSellers />
 
-        {/* 4. Direct Delivery */}
+        {/* 5. Batch Delivery Workflow */}
         <Customers />
 
-        {/* 4. Bottling Unit - Manufacturing Timeline & Left-to-Right Moving Images */}
+        {/* 6. Bottling Unit - Moving Factory Photos Reel */}
         <Manufacturing />
 
-        {/* 5. Licenses Only */}
+
+        {/* 8. Statutory Licenses Only */}
         <Certifications />
 
-        {/* 6. Founders & Leadership */}
+        {/* 9. Founders & Leadership */}
         <Founders />
 
-        {/* 7. Order / Wholesale Contact */}
+        {/* 10. Order / Wholesale Contact & Google Maps */}
         <ContactSection />
       </main>
 
-      {/* 7. Footer */}
+      {/* 11. Footer */}
       <Footer />
     </div>
   );
