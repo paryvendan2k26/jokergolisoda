@@ -323,11 +323,11 @@ export default function ContactSection() {
 
             {/* 5 Bottles Horizontal Triangle Row */}
             <div className="relative z-10 flex items-end justify-center gap-1 sm:gap-2.5 md:gap-3.5 w-full max-w-xl mx-auto select-none pointer-events-none">
-              {/* Bottle 1: Small Left (Kiwi) */}
+              {/* Bottle 1: Small Left (Green Apple) */}
               <div className="flex flex-col items-center -rotate-3 transition-transform duration-500 hover:scale-105">
                 <img
-                  src="/bottles/kiwi.webp"
-                  alt="Joker Golisoda Kiwi Bottle"
+                  src="/bottles/greenapple.webp"
+                  alt="Joker Golisoda Green Apple Bottle"
                   loading="lazy"
                   decoding="async"
                   className="h-36 sm:h-48 md:h-56 lg:h-64 w-auto object-contain filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.45)]"
