@@ -54,7 +54,7 @@ export default function ContactSection() {
     setLoading(true);
     setErrorMessage('');
 
-    const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    const web3Key = import.meta.env.WEB3FORMS_ACCESS_KEY || import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
