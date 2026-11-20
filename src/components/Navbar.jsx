@@ -25,7 +25,6 @@ export default function Navbar() {
     },
     { label: 'Bottling Unit', href: '#manufacturing' },
     { label: 'Licenses', href: '#licenses' },
-    { label: 'Founders', href: '#founders' },
     { label: 'Order', href: '#contact' },
   ];
 
