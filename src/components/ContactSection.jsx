@@ -80,6 +80,7 @@ export default function ContactSection() {
             city: formData.city,
             state: formData.state,
             message: formData.message,
+            botcheck: formData.botcheck,
             reply_to: formData.email || companyDetails.email
           })
         });
@@ -103,6 +104,7 @@ export default function ContactSection() {
             city: formData.city,
             state: formData.state,
             message: formData.message,
+            botcheck: formData.botcheck,
             reply_to: formData.email || companyDetails.email
           },
           publicKey
