@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, MessageCircle, Sparkles, ShieldCheck, Factory, Award } from 'lucide-react';
+import { ArrowLeft, MessageCircle, MapPin } from 'lucide-react';
 import { companyDetails, foundersList } from '../data/flavours';
 
 export default function AboutPage({ onNavigateHome }) {
@@ -40,6 +40,18 @@ export default function AboutPage({ onNavigateHome }) {
 
           {/* Action Links */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Small Location Pill */}
+            <a
+              href={companyDetails.googleMapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-all hover:text-joker-red"
+              title="Hosur, Tamil Nadu (Google Maps)"
+            >
+              <MapPin className="w-3.5 h-3.5 text-joker-red flex-shrink-0" />
+              <span>Hosur, Tamil Nadu</span>
+            </a>
+
             <a
               href="/"
               onClick={(e) => {
@@ -71,10 +83,24 @@ export default function AboutPage({ onNavigateHome }) {
       <main className="flex-1 pt-28 sm:pt-36 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           {/* Header Banner */}
-          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-            <span className="inline-block text-xs font-black uppercase tracking-widest text-joker-red px-3.5 py-1 rounded-full bg-joker-red/10 border border-joker-red/20 mb-4">
-              About Joker Golisoda
-            </span>
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="inline-block text-xs font-black uppercase tracking-widest text-joker-red px-3.5 py-1 rounded-full bg-joker-red/10 border border-joker-red/20">
+                About Joker Golisoda
+              </span>
+
+              {/* Small Location Button */}
+              <a
+                href={companyDetails.googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 border border-stone-300 text-xs font-bold transition-all hover:border-joker-red hover:text-joker-red"
+                title="View plant location on Google Maps"
+              >
+                <MapPin className="w-3.5 h-3.5 text-joker-red flex-shrink-0" />
+                <span>Hosur, Tamil Nadu</span>
+              </a>
+            </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-joker-charcoal tracking-tight uppercase leading-[1.05] mb-5">
               Authentic Indian Refreshment, <br />
@@ -86,12 +112,76 @@ export default function AboutPage({ onNavigateHome }) {
             </p>
           </div>
 
-          {/* Company Summary Cards */}
+          {/* Bottles Stack UI at Top of Section */}
+          <div className="flex flex-col items-center justify-center relative w-full mb-14 sm:mb-16 select-none pointer-events-none">
+            {/* 5 Bottles Horizontal Tiered Row */}
+            <div className="relative z-10 flex items-end justify-center gap-1 sm:gap-2.5 md:gap-3.5 w-full max-w-xl mx-auto">
+              {/* Bottle 1: Small Left (Green Apple) */}
+              <div className="flex flex-col items-center -rotate-3 transition-transform duration-500">
+                <img
+                  src="/bottles/greenapple.webp"
+                  alt="Joker Golisoda Green Apple Bottle"
+                  loading="eager"
+                  decoding="async"
+                  className="h-32 sm:h-44 md:h-52 w-auto object-contain filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.35)]"
+                />
+              </div>
+
+              {/* Bottle 2: Medium Left (Blueberry) */}
+              <div className="flex flex-col items-center -rotate-1 transition-transform duration-500 -ml-1 sm:-ml-2">
+                <img
+                  src="/bottles/blueberry.webp"
+                  alt="Joker Golisoda Blueberry Bottle"
+                  loading="eager"
+                  decoding="async"
+                  className="h-40 sm:h-52 md:h-64 w-auto object-contain filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.4)]"
+                />
+              </div>
+
+              {/* Bottle 3: Largest Center Peak (Paneer Soda) */}
+              <div className="relative z-20 flex flex-col items-center transition-transform duration-500 -ml-1 sm:-ml-2">
+                <img
+                  src="/bottles/paneer-soda.webp"
+                  alt="Joker Golisoda Paneer Soda Bottle"
+                  loading="eager"
+                  decoding="async"
+                  className="h-48 sm:h-64 md:h-76 w-auto object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.45)] scale-105"
+                />
+              </div>
+
+              {/* Bottle 4: Medium Right (Orange) */}
+              <div className="flex flex-col items-center rotate-1 transition-transform duration-500 -ml-1 sm:-ml-2">
+                <img
+                  src="/bottles/orange.webp"
+                  alt="Joker Golisoda Orange Bottle"
+                  loading="eager"
+                  decoding="async"
+                  className="h-40 sm:h-52 md:h-64 w-auto object-contain filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.4)]"
+                />
+              </div>
+
+              {/* Bottle 5: Small Right (Pineapple) */}
+              <div className="flex flex-col items-center rotate-3 transition-transform duration-500 -ml-1 sm:-ml-2">
+                <img
+                  src="/bottles/pineapple.webp"
+                  alt="Joker Golisoda Pineapple Bottle"
+                  loading="eager"
+                  decoding="async"
+                  className="h-32 sm:h-44 md:h-52 w-auto object-contain filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.35)]"
+                />
+              </div>
+            </div>
+
+            {/* Pedestal Shadow */}
+            <div className="relative z-10 w-4/5 max-w-md h-3 sm:h-4 bg-stone-400/30 rounded-full blur-md mt-1 mx-auto" />
+          </div>
+
+          {/* Company Summary Narrative */}
           <div className="bg-white rounded-3xl border border-stone-200/90 shadow-sm p-6 sm:p-10 md:p-12 mb-16 sm:mb-20">
             <div className="max-w-3xl mx-auto text-left space-y-6 text-stone-700 leading-relaxed text-base sm:text-lg">
               <p>
                 <strong>Joker Golisoda</strong> is an authentic Indian beverage brand manufactured by{' '}
-                <strong className="text-joker-charcoal">Dhanvin Food & Food Products</strong>, based in Hosur, Tamil Nadu. Born from a deep appreciation for India's timeless marble soda heritage, Joker Golisoda revives the cherished tradition of classic Codd-neck glass bottles while meeting the highest modern hygiene and quality standards.
+                <strong className="text-joker-charcoal">Dhanvin Food & Food Products</strong>, based in Hosur, Tamil Nadu. Born from a deep appreciation for India's timeless marble soda heritage, Joker Golisoda revives the cherished tradition of classic Codd-neck glass bottles while meeting modern hygiene and quality benchmarks.
               </p>
 
               <p>
@@ -99,39 +189,12 @@ export default function AboutPage({ onNavigateHome }) {
               </p>
 
               <p>
-                Every single bottle is produced at our automated bottling unit in Hosur using 7-stage RO-purified water, food-grade carbon dioxide, and premium beverage ingredients—ensuring certified safety, consistent quality, and that signature, fizzy marble pop.
+                Every single bottle is produced at our automated bottling unit in Hosur using pure water, food-grade carbon dioxide, and premium beverage ingredients—ensuring certified safety, consistent quality, and that signature, fizzy marble pop.
               </p>
-            </div>
-
-            {/* Quick Pillars Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-10 pt-10 border-t border-stone-100">
-              <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 text-left">
-                <div className="w-10 h-10 rounded-xl bg-joker-red/10 flex items-center justify-center text-joker-red mb-3">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <h2 className="text-base font-black uppercase text-joker-charcoal mb-1">Authentic Goli Soda</h2>
-                <p className="text-xs sm:text-sm text-stone-600">Heavy-gauge 300ml returnable glass bottles sealed with the iconic marble stopper.</p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 text-left">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 mb-3">
-                  <Factory className="w-5 h-5" />
-                </div>
-                <h2 className="text-base font-black uppercase text-joker-charcoal mb-1">Automated Unit</h2>
-                <p className="text-xs sm:text-sm text-stone-600">Advanced 7-stage RO water treatment, rotary bottle washing, and counter-pressure bottling in Hosur.</p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 text-left">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-600 mb-3">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <h2 className="text-base font-black uppercase text-joker-charcoal mb-1">Quality Certified</h2>
-                <p className="text-xs sm:text-sm text-stone-600">Manufactured under rigorous FSSAI standards with complete batch traceability.</p>
-              </div>
             </div>
           </div>
 
-          {/* Leadership & Founders Section - Names Only, No Contacts */}
+          {/* Leadership & Founders Section - Plain, Neat, No Icons */}
           <div className="text-center mb-16 sm:mb-20">
             <div className="mb-10 sm:mb-12">
               <span className="text-xs font-bold uppercase tracking-widest text-joker-red block mb-2">
@@ -145,28 +208,20 @@ export default function AboutPage({ onNavigateHome }) {
               </p>
             </div>
 
-            {/* Founders Cards - Strictly Name, Role & Company (No contact details) */}
+            {/* Plain & Neat Leaders Cards - No monogram icons, plain and neat */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
               {foundersList.map((founder, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center"
+                  className="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center justify-center"
                 >
-                  {/* Monogram Avatar Badge */}
-                  <div
-                    className="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-md mb-6"
-                    style={{ backgroundColor: founder.accentColor }}
-                  >
-                    {founder.initials}
-                  </div>
-
                   {/* Leader Name */}
-                  <h3 className="text-xl sm:text-2xl font-black text-joker-charcoal uppercase tracking-tight mb-1.5">
+                  <h3 className="text-xl sm:text-2xl font-black text-joker-charcoal uppercase tracking-tight mb-2">
                     {founder.name}
                   </h3>
 
                   {/* Designation */}
-                  <p className="text-sm font-bold text-joker-red mb-1">
+                  <p className="text-sm font-bold text-joker-red mb-1.5">
                     {founder.role}
                   </p>
 
@@ -208,7 +263,7 @@ export default function AboutPage({ onNavigateHome }) {
 
       {/* Simple Footer */}
       <footer className="py-8 bg-joker-charcoal text-white text-center text-xs text-stone-400 border-t border-stone-800">
-        <p>© 2026 Dhanvin Food & Food Products. All rights reserved. | Joker Golisoda™</p>
+        <p>© 2026 Dhanvin Food & Food Products. All rights reserved. | Joker Golisoda™ • Hosur, Tamil Nadu</p>
       </footer>
     </div>
   );

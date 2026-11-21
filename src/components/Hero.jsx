@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, MapPin } from 'lucide-react';
 import { companyDetails } from '../data/flavours';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -133,13 +133,24 @@ export default function Hero() {
               <span className="text-joker-red">Indian</span> Golisoda.
             </h1>
 
-            <div>
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
               <a
                 href="#flavours"
                 className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3.5 rounded-full bg-joker-red hover:bg-joker-red-dark text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-xl shadow-joker-red/35 transition-all hover:scale-105 active:scale-95"
               >
                 <span>Explore Flavours</span>
                 <ArrowDown className="w-4 h-4" />
+              </a>
+
+              {/* Small Location Button on Mobile */}
+              <a
+                href={companyDetails.googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white/90 border border-white/20 text-xs font-bold transition-all backdrop-blur-sm shadow-sm"
+              >
+                <MapPin className="w-3.5 h-3.5 text-joker-red" />
+                <span>Hosur, TN</span>
               </a>
             </div>
           </div>
@@ -177,13 +188,25 @@ export default function Hero() {
               Golisoda.
             </h1>
 
-            <div className="pt-1">
+            <div className="pt-1 flex items-center gap-3">
               <a
                 href="#flavours"
                 className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-joker-red hover:bg-joker-red-dark text-white font-extrabold text-sm sm:text-base tracking-wider uppercase shadow-xl shadow-joker-red/35 transition-all hover:scale-105 active:scale-95"
               >
                 <span>Explore Flavours</span>
                 <ArrowDown className="w-5 h-5" />
+              </a>
+
+              {/* Small Location Button on Desktop */}
+              <a
+                href={companyDetails.googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-5 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs sm:text-sm font-bold transition-all hover:scale-105 backdrop-blur-sm shadow-sm"
+                title="View Bottling Plant in Hosur on Google Maps"
+              >
+                <MapPin className="w-4 h-4 text-joker-red" />
+                <span>Hosur, Tamil Nadu</span>
               </a>
             </div>
           </div>
@@ -243,7 +266,7 @@ export default function Hero() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                 <a
                   href="#flavours"
                   className="px-6 py-3.5 rounded-full bg-joker-charcoal hover:bg-black text-white font-bold text-xs sm:text-sm tracking-wide uppercase transition-all hover:scale-105"
@@ -258,6 +281,18 @@ export default function Hero() {
                   className="px-6 py-3.5 rounded-full bg-white hover:bg-stone-100 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-all hover:border-joker-red hover:text-joker-red shadow-sm"
                 >
                   About Our Company & Team →
+                </a>
+
+                {/* Small Location Button */}
+                <a
+                  href={companyDetails.googleMapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-3.5 rounded-full bg-white hover:bg-stone-100 text-stone-700 border border-stone-300 text-xs font-bold transition-all hover:border-joker-red hover:text-joker-red shadow-sm"
+                  title="View Hosur plant location on Google Maps"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-joker-red flex-shrink-0" />
+                  <span>Hosur, Tamil Nadu</span>
                 </a>
               </div>
             </div>
