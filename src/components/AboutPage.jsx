@@ -181,7 +181,11 @@ export default function AboutPage({ onNavigateHome }) {
             <div className="max-w-3xl mx-auto text-left space-y-6 text-stone-700 leading-relaxed text-base sm:text-lg">
               <p>
                 <strong>Joker Golisoda</strong> is an authentic Indian beverage brand manufactured by{' '}
-                <strong className="text-joker-charcoal">Dhanvin Food & Food Products</strong>, based in Hosur, Tamil Nadu. Born from a deep appreciation for India's timeless marble soda heritage, Joker Golisoda revives the cherished tradition of classic Codd-neck glass bottles while meeting modern hygiene and quality benchmarks.
+                <strong className="text-joker-charcoal">Dhanvin Food & Food Products</strong>, based in Hosur, Tamil Nadu. Born from a deep appreciation for India's timeless marble soda heritage, Joker Golisoda introduces an innovative twist to the beloved tradition with modern, easy-to-use marble bottles that meet the highest hygiene and quality benchmarks.
+              </p>
+
+              <p>
+                <strong>Smart Twist Innovation:</strong> Gone are the days of struggling to push the marble with wooden sticks or your fingers. With our innovative smart-twist cap technology, simply twist the cap—the marble drops down smoothly on its own, releasing instant effervescence. Effortless, mess-free, and ready to enjoy in seconds!
               </p>
 
               <p>

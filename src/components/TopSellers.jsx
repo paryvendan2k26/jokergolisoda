@@ -32,7 +32,7 @@ export default function TopSellers() {
             </p>
 
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal mb-6 max-w-xl">
-              Served in heavy-gauge 300ml Codd-neck glass bottles for that unmistakable thunderous marble pop and crisp fizz.
+              Served in innovative 300ml twist-cap marble bottles for that unmistakable marble pop and crisp fizz.
             </p>
 
             {/* Quick 3 Ranks Pill List */}

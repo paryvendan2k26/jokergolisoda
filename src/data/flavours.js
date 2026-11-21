@@ -172,7 +172,7 @@ export const flavours = [
     bottleCapacity: "300ml",
     crateQuantity: "24 Bottles per Crate",
     price: "₹35 MRP",
-    servingSuggestion: "Serve frosty cold in a frosted glass for parties and celebratory gatherings.",
+    servingSuggestion: "Serve frosty cold straight from the bottle or in a chilled mug for parties and celebratory gatherings.",
   }
 ];
 

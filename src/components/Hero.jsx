@@ -128,10 +128,13 @@ export default function Hero() {
               />
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-[0.98] uppercase mb-3 sm:mb-4">
-              Authentic <br className="sm:hidden" />
-              <span className="text-joker-red">Indian</span> Golisoda.
+            <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-[0.95] uppercase mb-1.5 sm:mb-2">
+              Joker <span className="text-joker-red">Golisoda</span>
             </h1>
+
+            <p className="text-xs sm:text-sm font-bold text-stone-300 uppercase tracking-wider mb-3 sm:mb-4">
+              Authentic Indian Marble Golisoda
+            </p>
 
             <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
               <a
@@ -182,11 +185,14 @@ export default function Hero() {
               />
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[0.96] uppercase mb-6 sm:mb-8">
-              Authentic <br />
-              <span className="text-joker-red">Indian</span> <br />
-              Golisoda.
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tight leading-[0.94] uppercase mb-2 sm:mb-3">
+              Joker <br />
+              <span className="text-joker-red">Golisoda</span>
             </h1>
+
+            <p className="text-base sm:text-lg lg:text-xl font-bold text-stone-300 uppercase tracking-widest mb-6 sm:mb-8">
+              Authentic Indian Marble Golisoda
+            </p>
 
             <div className="pt-1 flex items-center gap-3">
               <a
@@ -252,17 +258,21 @@ export default function Hero() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Column: Simple Clean Narrative & Pillars */}
             <div className="lg:col-span-7 flex flex-col justify-center text-left">
-              <span className="text-xs font-bold uppercase tracking-widest text-joker-red block mb-3">
-                About Joker Golisoda
+              <span className="inline-block text-xs font-black uppercase tracking-widest text-joker-red px-3 py-1 rounded-full bg-joker-red/10 border border-joker-red/20 mb-3">
+                Modern Twist Innovation
               </span>
 
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-joker-charcoal tracking-tight leading-[1.08] mb-6">
-                Unleash the Taste. <br />
-                <span className="text-joker-red">Experience the Twist!</span>
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-joker-charcoal tracking-tight leading-[1.08] mb-5">
+                No Need to Push the Marble. <br />
+                <span className="text-joker-red">Just Twist & Enjoy!</span>
               </h2>
 
+              <p className="text-base sm:text-lg text-stone-700 leading-relaxed font-normal mb-3 max-w-xl">
+                Gone are the days of struggling to push the marble with wooden tools or your fingers. <strong>Joker Golisoda</strong> brings a breakthrough new packaging innovation to India!
+              </p>
+
               <p className="text-base sm:text-lg text-stone-700 leading-relaxed font-normal mb-8 max-w-xl">
-                Welcome to <strong>Joker Golisoda</strong>, where traditional refreshment meets exciting flavours and a bold, playful identity!
+                With our innovative smart-twist cap design, simply <strong>twist the cap</strong>—the marble drops down smoothly on its own, releasing instant effervescence. Effortless, mess-free, and ready to enjoy in seconds!
               </p>
 
               {/* Action Buttons */}
@@ -312,8 +322,8 @@ export default function Hero() {
                     className="relative z-10 h-[260px] sm:h-[320px] w-auto object-contain mx-auto rotate-6 drop-shadow-xl select-none"
                   />
                 </div>
-                <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-stone-500 mt-4 px-3.5 py-1 bg-white rounded-full border border-stone-200/80 shadow-sm">
-                  Signature Returnable Codd-Neck Glass
+                <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-stone-600 mt-4 px-3.5 py-1 bg-white rounded-full border border-stone-200/80 shadow-sm">
+                  Innovative Twist-Cap Marble Bottle
                 </span>
               </div>
             </div>

@@ -65,14 +65,14 @@ export default function Customers() {
             </p>
 
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal mb-6 max-w-xl">
-              Delivered in returnable crates of 24 heavy-gauge 300ml Codd-neck glass bottles. Freshly carbonated and dispatched with guaranteed doorstep delivery.
+              Delivered in wholesale crates of 24 bottles (300ml). Freshly carbonated and dispatched with guaranteed doorstep delivery.
             </p>
 
             {/* Quick Specs */}
             <div className="grid grid-cols-2 gap-3 max-w-md mb-8">
               <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200/90 shadow-sm">
                 <span className="text-xs font-black text-stone-900 uppercase block mb-0.5">24 Bottles / Crate</span>
-                <span className="text-[11px] text-stone-500 font-medium">Returnable glass bottles</span>
+                <span className="text-[11px] text-stone-500 font-medium">Innovative Marble Bottles</span>
               </div>
               <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200/90 shadow-sm">
                 <span className="text-xs font-black text-stone-900 uppercase block mb-0.5">Doorstep Logistics</span>
