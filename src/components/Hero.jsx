@@ -248,16 +248,16 @@ export default function Hero() {
                   href="#flavours"
                   className="px-6 py-3.5 rounded-full bg-joker-charcoal hover:bg-black text-white font-bold text-xs sm:text-sm tracking-wide uppercase transition-all hover:scale-105"
                 >
-                  Explore 12 Flavours
+                  Explore 10 Flavours
                 </a>
 
                 <a
-                  href={`https://wa.me/${companyDetails.whatsappNumber}`}
+                  href="/about"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-full bg-white hover:bg-stone-100 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-all hover:border-emerald-500 hover:text-emerald-700 shadow-sm"
+                  className="px-6 py-3.5 rounded-full bg-white hover:bg-stone-100 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 transition-all hover:border-joker-red hover:text-joker-red shadow-sm"
                 >
-                  Order Direct on WhatsApp
+                  About Our Company & Team →
                 </a>
               </div>
             </div>

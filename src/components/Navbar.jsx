@@ -43,16 +43,16 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Flavours', href: '#flavours' },
+    { label: 'About', href: '/about', openInNewTab: true },
+    { label: 'Flavours', href: '/#flavours' },
     {
       label: 'Coming Soon',
-      href: '#coming-soon',
+      href: '/#coming-soon',
       badge: '8',
     },
-    { label: 'Bottling Unit', href: '#manufacturing' },
-    { label: 'Licenses', href: '#licenses' },
-    { label: 'Order', href: '#contact' },
+    { label: 'Bottling Unit', href: '/#manufacturing' },
+    { label: 'Licenses', href: '/#licenses' },
+    { label: 'Order', href: '/#contact' },
   ];
 
   return (
@@ -99,6 +99,8 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
+                  target={link.openInNewTab ? '_blank' : undefined}
+                  rel={link.openInNewTab ? 'noopener noreferrer' : undefined}
                   className="hover:text-joker-red transition-colors whitespace-nowrap flex items-center gap-1.5 py-1"
                 >
                   <span className="whitespace-nowrap">{link.label}</span>
@@ -116,24 +118,23 @@ export default function Navbar() {
               <a
                 href={`tel:${companyDetails.phone}`}
                 className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold transition-all whitespace-nowrap"
-                aria-label={`Call Wholesale Hotline ${companyDetails.phone}`}
+                aria-label="Call Wholesale Hotline"
               >
                 <Phone className="w-3.5 h-3.5 text-joker-red" />
                 <span>Call</span>
               </a>
 
-              {/* WhatsApp / Ordering Button with Number 8825751371 */}
+              {/* WhatsApp / Ordering Button - Clean Icon + Order Now without explicit phone number */}
               <a
                 href={`https://wa.me/${companyDetails.whatsappNumber}?text=${encodeURIComponent('Hello Joker Golisoda, I would like to place an order for bottles (₹35 MRP).')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-joker-red hover:bg-joker-red-dark text-white text-xs sm:text-sm font-extrabold transition-all shadow-sm hover:scale-105 active:scale-95 whitespace-nowrap"
-                title="Order on WhatsApp: 8825751371"
-                aria-label="Order on WhatsApp: 8825751371"
+                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-joker-red hover:bg-joker-red-dark text-white text-xs sm:text-sm font-extrabold transition-all shadow-sm hover:scale-105 active:scale-95 whitespace-nowrap"
+                title="Order Now on WhatsApp"
+                aria-label="Order Now on WhatsApp"
               >
                 <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                <span className="hidden sm:inline">Order:</span>
-                <span>8825751371</span>
+                <span>Order Now</span>
               </a>
 
               {/* Mobile Hamburger / Close Button */}
@@ -161,6 +162,8 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
+                  target={link.openInNewTab ? '_blank' : undefined}
+                  rel={link.openInNewTab ? 'noopener noreferrer' : undefined}
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-bold text-stone-800 hover:bg-stone-100 hover:text-joker-red active:bg-stone-200 transition-colors"
                 >
@@ -183,7 +186,7 @@ export default function Navbar() {
                 className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-joker-red hover:bg-joker-red-dark text-white text-xs font-extrabold shadow-sm active:scale-98 transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Order on WhatsApp: 8825751371</span>
+                <span>Order Now</span>
               </a>
 
               <a
@@ -195,7 +198,7 @@ export default function Navbar() {
                   <Phone className="w-4 h-4 text-joker-red" />
                   <span>Call Hotline</span>
                 </span>
-                <span className="text-stone-600 font-mono text-[11px] font-bold">{companyDetails.phoneFormatted}</span>
+                <span className="text-stone-600 text-xs font-bold">Direct Line</span>
               </a>
             </div>
           </div>

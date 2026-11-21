@@ -42,13 +42,6 @@ export default function Customers() {
     },
   ];
 
-  // Helper for animated connecting line height
-  const getLineHeight = () => {
-    if (completedStep === 1) return '0%';
-    if (completedStep === 2) return '50%';
-    return '100%';
-  };
-
   return (
     <section
       id="delivery"
@@ -100,30 +93,23 @@ export default function Customers() {
 
           {/* Right Column: Connected Line with Animated Dots & Tick Marks */}
           <div className="lg:col-span-6 bg-stone-50/70 p-6 sm:p-8 md:p-10 rounded-3xl border border-stone-200/90 shadow-sm">
-            <div className="relative pl-2 sm:pl-4">
-              {/* Vertical Connecting Line Track */}
-              <div className="absolute top-8 bottom-8 left-8 sm:left-10 w-1.5 bg-stone-200 rounded-full z-0" />
+            <div className="flex flex-col">
+              {steps.map((step, idx) => {
+                const isDone = completedStep >= step.num;
+                const isNextDone = completedStep > step.num;
+                const isLast = idx === steps.length - 1;
 
-              {/* Animated Green Progress Line */}
-              <div
-                className="absolute top-8 left-8 sm:left-10 w-1.5 bg-emerald-500 rounded-full z-0 transition-all duration-700 ease-out"
-                style={{ height: getLineHeight() }}
-              />
-
-              {/* 3 Step Rows with Large Dots and Animated Tick Marks */}
-              <div className="relative z-10 space-y-8 sm:space-y-10">
-                {steps.map((step) => {
-                  const isDone = completedStep >= step.num;
-
-                  return (
-                    <div
-                      key={step.num}
-                      onClick={() => setCompletedStep(step.num)}
-                      className="flex items-start gap-4 sm:gap-6 cursor-pointer group select-none"
-                    >
-                      {/* Large Animated Dot */}
+                return (
+                  <div
+                    key={step.num}
+                    onClick={() => setCompletedStep(step.num)}
+                    className="flex items-start gap-4 sm:gap-6 cursor-pointer group select-none"
+                  >
+                    {/* Circle Column with Connector Line strictly between checkpoints */}
+                    <div className="flex flex-col items-center flex-shrink-0">
+                      {/* Checkpoint Dot */}
                       <div
-                        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center font-black transition-all duration-500 shadow-sm flex-shrink-0 ${
+                        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center font-black transition-all duration-500 shadow-sm z-10 flex-shrink-0 ${
                           isDone
                             ? 'bg-emerald-500 text-white ring-4 ring-emerald-100 scale-105 shadow-emerald-500/25'
                             : 'bg-white text-stone-400 border-2 border-stone-300 group-hover:border-stone-400 text-sm sm:text-base'
@@ -136,19 +122,30 @@ export default function Customers() {
                         )}
                       </div>
 
-                      {/* Step Details */}
-                      <div className="pt-1">
-                        <h3 className="text-lg sm:text-xl font-black text-joker-charcoal uppercase tracking-tight">
-                          {step.title}
-                        </h3>
-                        <p className="mt-1 text-xs sm:text-sm text-stone-500 font-medium max-w-sm">
-                          {step.desc}
-                        </p>
-                      </div>
+                      {/* Connecting Line to next checkpoint (NEVER renders after the last checkpoint) */}
+                      {!isLast && (
+                        <div className="w-1.5 h-12 sm:h-14 bg-stone-200 rounded-full relative overflow-hidden my-1">
+                          <div
+                            className={`w-full bg-emerald-500 rounded-full transition-all duration-700 ease-out ${
+                              isNextDone ? 'h-full' : 'h-0'
+                            }`}
+                          />
+                        </div>
+                      )}
                     </div>
-                  );
-                })}
-              </div>
+
+                    {/* Step Details */}
+                    <div className="pt-2 sm:pt-2.5 pb-3">
+                      <h3 className="text-lg sm:text-xl font-black text-joker-charcoal uppercase tracking-tight">
+                        {step.title}
+                      </h3>
+                      <p className="mt-1 text-xs sm:text-sm text-stone-500 font-medium max-w-sm">
+                        {step.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
